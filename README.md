@@ -37,5 +37,5 @@ Ademas el sistema cuenta con una alarma programada cada 6 horas. Este tiempo es 
 
 
 ### Diagrama en bloques
-  <img src="https://i.ibb.co/9k12T1cj/TP1-sag.png" width="50%">
+  <img src="https://i.ibb.co/ynmFtjZ6/TP1-sag.png" width="50%">
 
