@@ -23,8 +23,6 @@ En cada paso se indicará mediante el puerto serie el estado del proceso:
 - Pulso cardiaco 76 Latidos por minuto
 - Lectura finalizada
 
-Ademas el sistema cuenta con una alarma programada cada 6 horas. Este tiempo es fijo y queda configurado en el firmware del programa mediante un #define. Cada ese tiempo sonara un buzzer para recordarle al usuario que es necesario un control.
-
 
 ### Plataforma de desarrollo: NUCLEO-F429ZI
 
@@ -37,6 +35,6 @@ Ademas el sistema cuenta con una alarma programada cada 6 horas. Este tiempo es 
 
 
 ### Diagrama en bloques
-  <a href="https://ibb.co/4ZwRzrX8"><img src="https://i.ibb.co/WWNvZJMk/TP1-sag.png" alt="TP1-sag" border="0" /></a>
+  <a href="https://ibb.co/0pyKSYXb"><img src="https://i.ibb.co/CpK6ZVtG/dbloques2.png" alt="dbloques2" border="0"></a>
 
 
