@@ -55,6 +55,7 @@ En cada paso se indicará mediante el puerto serie el estado del proceso:
   - Genera mensajes que indican los BPM calculados y los envía a través de UART.
 
   <a href="https://ibb.co/1tqWy5GY"><img src="https://i.ibb.co/Zp8D4PzR/main.png" alt="main" border="0"></a>
+  
 3. Cálculo de BPM:
 
   - Promedio Móvil: Ayuda a suavizar las señales del sensor, reduciendo el ruido.
