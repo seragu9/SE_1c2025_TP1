@@ -33,6 +33,44 @@ En cada paso se indicará mediante el puerto serie el estado del proceso:
 - UART: Se utiliza para enviar información de lectura y estado del sistema a la PC
 - LED1: Se utiliza para indicar que esta tomando una medicion
 
+### Flujo del Programa
+1. Inicialización:
+
+  - Configura las entradas (botón) y salidas (LED).
+
+  - Establece comunicación UART para enviar mensajes.
+
+2. Bucle Main:
+
+  - Monitorea el estado del botón.
+
+  - Activa o desactiva el modo de lectura según el estado del botón.
+
+  - En el modo de lectura activa:
+
+      - Lee valores del sensor KY-039.
+
+      - Calcula los BPM utilizando un promedio móvil de las lecturas y un promedio ponderado de los intervalos entre picos detectados.
+
+  - Genera mensajes que indican los BPM calculados y los envía a través de UART.
+
+  <a href="https://ibb.co/1tqWy5GY"><img src="https://i.ibb.co/Zp8D4PzR/main.png" alt="main" border="0"></a>
+3. Cálculo de BPM:
+
+  - Promedio Móvil: Ayuda a suavizar las señales del sensor, reduciendo el ruido.
+
+  - Detección de Picos: Identifica incrementos consecutivos en la señal para determinar cuándo ocurre un latido.
+
+  - Promedio Ponderado: Usa los últimos tres intervalos entre latidos para calcular los BPM con mayor precisión.
+
+  <a href="https://ibb.co/4nXq2wLh"><img src="https://i.ibb.co/sdNfCp48/bpm.png" alt="bpm" border="0"></a>
+  
+4. Mensajes UART:
+
+  - Informan el inicio y fin de lectura.
+
+  - Muestran los BPM calculados en tiempo real.
+
 
 ### Diagrama en bloques
   <a href="https://ibb.co/0pyKSYXb"><img src="https://i.ibb.co/CpK6ZVtG/dbloques2.png" alt="dbloques2" border="0"></a>
