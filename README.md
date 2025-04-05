@@ -54,7 +54,7 @@ En cada paso se indicará mediante el puerto serie el estado del proceso:
 
   - Genera mensajes que indican los BPM calculados y los envía a través de UART.
 
-  <a href="https://ibb.co/1tqWy5GY"><img src="https://i.ibb.co/Zp8D4PzR/main.png" alt="main" style="width:200px;" border="0"></a>
+  <a href="https://ibb.co/1tqWy5GY"><img src="https://i.ibb.co/Zp8D4PzR/main.png" alt="main" style="width:500px;" border="0"></a>
   
 3. Cálculo de BPM:
 
@@ -64,7 +64,7 @@ En cada paso se indicará mediante el puerto serie el estado del proceso:
 
   - Promedio Ponderado: Usa los últimos tres intervalos entre latidos para calcular los BPM con mayor precisión.
 
-  <a href="https://ibb.co/4nXq2wLh"><img src="https://i.ibb.co/sdNfCp48/bpm.png" alt="bpm" style="width:200px;" border="0"></a>
+  <a href="https://ibb.co/4nXq2wLh"><img src="https://i.ibb.co/sdNfCp48/bpm.png" alt="bpm" style="width:500px;" border="0"></a>
   
 4. Mensajes UART:
 
