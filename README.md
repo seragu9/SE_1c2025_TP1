@@ -33,7 +33,7 @@ En cada paso se indicará mediante el puerto serie el estado del proceso:
 - UART: Se utiliza para enviar información de lectura y estado del sistema a la PC
 - LED1: Se utiliza para indicar que esta tomando una medicion
 
-### Flujo del Programa
+## Flujo del Programa
 1. Inicialización:
 
   - Configura las entradas (botón) y salidas (LED).
@@ -73,7 +73,7 @@ En cada paso se indicará mediante el puerto serie el estado del proceso:
   - Muestran los BPM calculados en tiempo real.
 
 
-### Diagrama en bloques
+## Diagrama en bloques
   <a href="https://ibb.co/0pyKSYXb"><img src="https://i.ibb.co/CpK6ZVtG/dbloques2.png" alt="dbloques2" border="0"></a>
 
 
