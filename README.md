@@ -1,4 +1,4 @@
-# Trabajo Prático N1 - Idea Proyecto
+# Trabajo Prático N2 - Idea Proyecto
 
 
 **Título**: Sistema de Monitoreo de Frecuencia Cardiaca
