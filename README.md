@@ -34,6 +34,8 @@ En cada paso se indicará, mediante el puerto serie y el display, el estado del 
 1. Inicialización:
 
   - Configura las entradas (botón) y salidas (LED).
+
+  - Se configura la inicializacion del Display OLED SSD1306.
   
   - El boton contiene una maquina de estados finita para evitar rebotes.
   
@@ -62,6 +64,7 @@ En cada paso se indicará, mediante el puerto serie y el display, el estado del 
   - Filtrado de Latidos Rápidos: Calcula la diferencia entre el contador de pulsos actual (`pulse_counter`) y el último conteo de latidos (`last_beat_count`). Si esta diferencia es menor o igual a 45 (equivalente a 300ms), se descarta el latido como inválido (demasiado rápido).
 
   <a href="https://imgbb.com/"><img src="https://i.ibb.co/d03yDzx0/tp2-bpm.png" alt="tp2-bpm" style="width:500px;" border="0" /></a>
+  
 4. Mensajes UART y de Display:
 
   - Informan el inicio y fin de lectura.
@@ -70,6 +73,6 @@ En cada paso se indicará, mediante el puerto serie y el display, el estado del 
 
 
 ## Diagrama en bloques
-  <a href="https://ibb.co/QF4Nj5Nd"><img src="https://i.ibb.co/QF4Nj5Nd/TP2-sag.png" alt="TP2-sag" border="0" /></a>
+  <a href="https://ibb.co/QF4Nj5Nd"><img src="https://i.ibb.co/jvSMZpMR/TP2-sag.png" alt="TP2-sag" border="0" /></a>
 
 
