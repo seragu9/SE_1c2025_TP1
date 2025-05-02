@@ -73,6 +73,6 @@ En cada paso se indicará, mediante el puerto serie y el display, el estado del 
 
 
 ## Diagrama en bloques
-  <a href="https://ibb.co/QF4Nj5Nd"><img src="https://i.ibb.co/jvSMZpMR/TP2-sag.png" alt="TP2-sag" border="0" /></a>
+  <a href="https://ibb.co/QF4Nj5Nd"><img src="https://i.ibb.co/jvSMZpMR/TP2-sag.png" alt="TP2-sag" style="width:800px;" border="0" /></a>
 
 
