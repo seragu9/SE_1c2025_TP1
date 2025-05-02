@@ -1,4 +1,4 @@
-# Trabajo Prático N2 - Idea Proyecto
+# Trabajo Prático N2
 
 
 **Título**: Sistema de Monitoreo de Frecuencia Cardiaca
@@ -12,15 +12,11 @@
 
 El sistema cuenta con un boton para realizar la lectura de pulso cardiaco. Al pulsar una vez se encendera un led que indica que se esta tomando datos de pulso. 
 La lectura de pulso cardiaco se realiza mediante un sensor como por ejemplo:
-- https://www.mercadolibre.com.ar/modulo-sensor-pulso-cardiaco-detector-ritmo-ky-039-arduino/p/MLA46752256#polycard_client=search-nordic&searchVariation=MLA46752256&wid=MLA2026286570&sid=search
+- https://es.aliexpress.com/i/1005003939587424.html
 
-Para realizar una lectura es recomendable que el usuario primero ingrese un dedo al sensor en posicion correcta manteniendolo mientras presiona el pulsador para comenzar con la lectura. Luego de unos 5 segundos debe oprimir nuevamente el pulsador para finalizar la lectura y continuamente podria retirar el dedo del sensor.
-
-
-
-En cada paso se indicará mediante el puerto serie el estado del proceso:
+En cada paso se indicará, mediante el puerto serie y el display, el estado del proceso:
 - Comenzando lectura...
-- Pulso cardiaco 76 Latidos por minuto
+- Latidos por minuto: 76
 - Lectura finalizada
 
 
@@ -32,12 +28,15 @@ En cada paso se indicará mediante el puerto serie el estado del proceso:
 - ANALOG IN 1: Se utiliza para leer pulso cardiaco
 - UART: Se utiliza para enviar información de lectura y estado del sistema a la PC
 - LED1: Se utiliza para indicar que esta tomando una medicion
+- I2C: Se utiliza para visualizar informacion de lectura y estado del sistema
 
 ## Flujo del Programa
 1. Inicialización:
 
   - Configura las entradas (botón) y salidas (LED).
-
+  
+  - El boton contiene una maquina de estados finita para evitar rebotes.
+  
   - Establece comunicación UART para enviar mensajes.
 
 2. Bucle Main:
@@ -48,25 +47,22 @@ En cada paso se indicará mediante el puerto serie el estado del proceso:
 
   - En el modo de lectura activa:
 
-      - Lee valores del sensor KY-039.
+      - Lee valores del sensor HW-827.
 
-      - Calcula los BPM utilizando un promedio móvil de las lecturas y un promedio ponderado de los intervalos entre picos detectados.
+      - Calcula los BPM utilizando un umbral de deteccion y un promedio ponderado de los intervalos entre picos detectados.
 
   - Genera mensajes que indican los BPM calculados y los envía a través de UART.
 
-  <a href="https://ibb.co/1tqWy5GY"><img src="https://i.ibb.co/Zp8D4PzR/main.png" alt="main" style="width:500px;" border="0"></a>
+  <a href="https://ibb.co/MkFdm73h"><img src="https://i.ibb.co/b5ctkX83/dftp2-main.jpg" alt="dftp2-main" border="0" /></a>
   
 3. Cálculo de BPM:
 
-  - Promedio Móvil: Ayuda a suavizar las señales del sensor, reduciendo el ruido.
+  - Umbral de Detección: Utiliza un umbral (`threshold`) para detectar el inicio de un pulso. El umbral se calcula como un valor base (1.65V) más una variación de 12mV.
+  - Detección de Ascenso: Comprueba si el valor actual del sensor cruza el umbral desde abajo. Si la lectura anterior (`prev_value`) está por debajo del umbral y la lectura actual (`reader`) está por encima, se detecta un pulso.
+  - Filtrado de Latidos Rápidos: Calcula la diferencia entre el contador de pulsos actual (`pulse_counter`) y el último conteo de latidos (`last_beat_count`). Si esta diferencia es menor o igual a 45 (equivalente a 300ms), se descarta el latido como inválido (demasiado rápido).
 
-  - Detección de Picos: Identifica incrementos consecutivos en la señal para determinar cuándo ocurre un latido.
-
-  - Promedio Ponderado: Usa los últimos tres intervalos entre latidos para calcular los BPM con mayor precisión.
-
-  <a href="https://ibb.co/4nXq2wLh"><img src="https://i.ibb.co/sdNfCp48/bpm.png" alt="bpm" style="width:500px;" border="0"></a>
-  
-4. Mensajes UART:
+  <a href="https://imgbb.com/"><img src="https://i.ibb.co/d03yDzx0/tp2-bpm.png" alt="tp2-bpm" style="width:500px;" border="0" /></a>
+4. Mensajes UART y de Display:
 
   - Informan el inicio y fin de lectura.
 
@@ -74,6 +70,6 @@ En cada paso se indicará mediante el puerto serie el estado del proceso:
 
 
 ## Diagrama en bloques
-  <a href="https://ibb.co/0pyKSYXb"><img src="https://i.ibb.co/CpK6ZVtG/dbloques2.png" alt="dbloques2" border="0"></a>
+  <a href="https://ibb.co/QF4Nj5Nd"><img src="https://i.ibb.co/QF4Nj5Nd/TP2-sag.png" alt="TP2-sag" border="0" /></a>
 
 
