@@ -76,3 +76,6 @@ En cada paso se indicará, mediante el puerto serie y el display, el estado del 
   <a href="https://ibb.co/QF4Nj5Nd"><img src="https://i.ibb.co/jvSMZpMR/TP2-sag.png" alt="TP2-sag" style="width:800px;" border="0" /></a>
 
 
+## Video demostrativo
+
+[![Video del sistema de monitoreo cardiaco](https://img.youtube.com/vi/C37dG0QMjgk/0.jpg)](https://www.youtube.com/watch?v=C37dG0QMjgk)
