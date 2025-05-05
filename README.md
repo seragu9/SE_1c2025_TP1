@@ -59,7 +59,7 @@ En cada paso se indicará, mediante el puerto serie y el display, el estado del 
   
 3. Cálculo de BPM:
 
-  - Umbral de Detección: Utiliza un umbral (`threshold`) para detectar el inicio de un pulso. El umbral se calcula como un valor base (1.65V) más una variación de 12mV.
+  - Umbral de Detección: Utiliza un umbral (`threshold`) para detectar el inicio de un pulso. El umbral se calcula como un valor base (1,65 V) más una variación de 12 mV.
   - Detección de Ascenso: Comprueba si el valor actual del sensor cruza el umbral desde abajo. Si la lectura anterior (`prev_value`) está por debajo del umbral y la lectura actual (`reader`) está por encima, se detecta un pulso.
   - Filtrado de Latidos Rápidos: Calcula la diferencia entre el contador de pulsos actual (`pulse_counter`) y el último conteo de latidos (`last_beat_count`). Si esta diferencia es menor o igual a 45 (equivalente a 300ms), se descarta el latido como inválido (demasiado rápido).
 
