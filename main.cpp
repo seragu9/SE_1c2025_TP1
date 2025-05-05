@@ -103,9 +103,9 @@ void outputsInit() {
 void buildMessage() {
     //  enviar el mensaje por UART
     char str[100];
-    sprintf(str,"Latidos por minuto: %.2f", bpm);
+    sprintf(str,"Latidos por minuto: %.0f", bpm);
     sendUartMessage(str);
-    sprintf(str,"      %.2f", bpm);
+    sprintf(str,"      %.0f", bpm);
     ssd1306_clear_display();
     ssd1306_print(0, 2, "Latidos por minuto:");
     ssd1306_print(0, 4, str);
