@@ -22,6 +22,7 @@ En cada paso se indicará, mediante el puerto serie y el display, el estado del 
 Al iniciar el sistema se reproduce un mensaje por el parlante:
 
 - "Pulse el botón para comenzar la lectura"
+[Escuchar audio](files/audio.wav)
 
 ### Plataforma de desarrollo: NUCLEO-F429ZI
 
