@@ -72,8 +72,8 @@ Al iniciar el sistema se reproduce un mensaje por el parlante:
       - Lee valores del sensor HW-827.
 
       - Calcula los BPM utilizando un umbral de deteccion y un promedio ponderado de los intervalos entre picos detectados.
-
-  - Genera mensajes que indican los BPM calculados y los envía a través de UART.
+   
+      - Cada dos segundos genera mensajes que indican los BPM calculados y los envía a través de UART y al display
 
   <a href="https://ibb.co/mCYXf4PF"><img src="https://i.ibb.co/JRbyDHSF/dftp3-system.png" alt="dftp3_system" style="width:500px;" border="0"></a>
   
@@ -94,8 +94,7 @@ Al iniciar el sistema se reproduce un mensaje por el parlante:
 
 
 ## Diagrama en bloques
-  <a href="https://ibb.co/QF4Nj5Nd"><img src="https://i.ibb.co/jvSMZpMR/TP2-sag.png" alt="TP2-sag" style="width:800px;" border="0" /></a>
-
+  <a href="https://imgbb.com/"><img src="https://i.ibb.co/wFLN3G4D/TP3-sag.png" alt="TP3-sag" style="width:800px;" border="0"></a>
 
 ## Video demostrativo
 
