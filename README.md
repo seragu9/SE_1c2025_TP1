@@ -59,8 +59,7 @@ Al iniciar el sistema se reproduce un mensaje por el parlante:
 
   - Genera mensajes que indican los BPM calculados y los envía a través de UART.
 
-  <a href="https://ibb.co/hnDtpS4"><img src="https://i.ibb.co/2LgfXTC/dftp3-system.png" alt="dftp3-system" style="width:500px;" border="0"></a>
-
+  <a href="https://ibb.co/mCYXf4PF"><img src="https://i.ibb.co/JRbyDHSF/dftp3-system.png" alt="dftp3_system" style="width:500px;" border="0"></a>
   
 3. Cálculo de BPM:
 
