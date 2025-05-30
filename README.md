@@ -21,7 +21,7 @@ En cada paso se indicará, mediante el puerto serie y el display, el estado del 
 
 Al iniciar el sistema se reproduce un mensaje por el parlante:
 
-- "Pulse el botón para iniciar la lectura"
+- "Pulse el botón para comenzar la lectura"
 
 ### Plataforma de desarrollo: NUCLEO-F429ZI
 
@@ -59,7 +59,8 @@ Al iniciar el sistema se reproduce un mensaje por el parlante:
 
   - Genera mensajes que indican los BPM calculados y los envía a través de UART.
 
-  <a href="https://ibb.co/hnDtpS4"><img src="https://i.ibb.co/2LgfXTC/dftp3-system.png" alt="dftp3-system" border="0"></a>
+  <a href="https://ibb.co/hnDtpS4"><img src="https://i.ibb.co/2LgfXTC/dftp3-system.png" alt="dftp3-system" style="width:500px;" border="0"></a>
+
   
 3. Cálculo de BPM:
 
@@ -68,6 +69,8 @@ Al iniciar el sistema se reproduce un mensaje por el parlante:
   - Filtrado de Latidos Rápidos: Calcula la diferencia entre el contador de pulsos actual (`pulse_counter`) y el último conteo de latidos (`last_beat_count`). Si esta diferencia es menor o igual a 45 (equivalente a 450ms), se descarta el latido como inválido (demasiado rápido).
 
   <a href="https://ibb.co/fzs84wWY"><img src="https://i.ibb.co/VcsH24GW/dftp3-bpm.png" alt="dftp3_bpm" style="width:500px;" border="0"></a>
+
+  
 4. Mensajes UART y de Display:
 
   - Informan el inicio y fin de lectura.
