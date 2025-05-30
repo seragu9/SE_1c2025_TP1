@@ -7,6 +7,20 @@
 
 **Objetivo**: Desarrollar un sistema que permita controlar pulso cardiaco de una persona
 
+## Directorios
+
+| Directorio/Archivo        | Contenido principal                                          |
+|-------------------|--------------------------------------------------------------|
+| `SE_1c2025_TP1/`            | Archivos fuente del proyecto                                 |
+| `SE_1c2025_TP1/audio/`        | Cotrol del mensaje de audio por el parlante                |
+| `SE_1c2025_TP1/button/`       | Control de botón de usuario con maquina de estados      |
+| `SE_1c2025_TP11/display/`    | Funciones gráficas para el display SSD1306                   |
+| `SE_1c2025_TP1/heart_monitor_system.h/` | Lógica principal y configuración del sistema     |
+| `SE_1c2025_TP1/pulse_sensor/`    | Funciones de control de sensor de pulso cardiaco         |
+| `SE_1c2025_TP1/serial_com/`    | Funciones de escritura por puerto serie                 |
+
+---
+
 ## Descripción: 
 
 
