@@ -15,9 +15,10 @@
 | `SE_1c2025_TP1/audio/`        | Cotrol del mensaje de audio por el parlante                |
 | `SE_1c2025_TP1/button/`       | Control de botón de usuario con maquina de estados      |
 | `SE_1c2025_TP11/display/`    | Funciones gráficas para el display SSD1306                   |
-| `SE_1c2025_TP1/heart_monitor_system.h/` | Lógica principal y configuración del sistema     |
+| `SE_1c2025_TP1/heart_monitor_system/` | Lógica principal y configuración del sistema     |
 | `SE_1c2025_TP1/pulse_sensor/`    | Funciones de control de sensor de pulso cardiaco         |
 | `SE_1c2025_TP1/serial_com/`    | Funciones de escritura por puerto serie                 |
+| `SE_1c2025_TP1/files/`    | Archivos utilizados (mensaje de audio)          |
 
 ---
 
