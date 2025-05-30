@@ -59,16 +59,15 @@ Al iniciar el sistema se reproduce un mensaje por el parlante:
 
   - Genera mensajes que indican los BPM calculados y los envía a través de UART.
 
-  [//]: # <a href="https://ibb.co/MkFdm73h"><img src="https://i.ibb.co/b5ctkX83/dftp2-main.jpg" alt="dftp2-main" border="0" /></a>
   <a href="https://ibb.co/hnDtpS4"><img src="https://i.ibb.co/2LgfXTC/dftp3-system.png" alt="dftp3-system" border="0"></a>
+  
 3. Cálculo de BPM:
 
   - Umbral de Detección: Utiliza un umbral (`threshold`) para detectar el inicio de un pulso. El umbral se calcula como un valor base (1,65 V) más una variación de 12 mV.
   - Detección de Ascenso: Comprueba si el valor actual del sensor cruza el umbral desde abajo. Si la lectura anterior (`prev_value`) está por debajo del umbral y la lectura actual (`reader`) está por encima, se detecta un pulso.
   - Filtrado de Latidos Rápidos: Calcula la diferencia entre el contador de pulsos actual (`pulse_counter`) y el último conteo de latidos (`last_beat_count`). Si esta diferencia es menor o igual a 45 (equivalente a 450ms), se descarta el latido como inválido (demasiado rápido).
 
-  <a href="https://imgbb.com/"><img src="https://i.ibb.co/d03yDzx0/tp2-bpm.png" alt="tp2-bpm" style="width:500px;" border="0" /></a>
-  
+  <a href="https://ibb.co/fzs84wWY"><img src="https://i.ibb.co/VcsH24GW/dftp3-bpm.png" alt="dftp3_bpm" style="width:500px;" border="0"></a>
 4. Mensajes UART y de Display:
 
   - Informan el inicio y fin de lectura.
