@@ -10,7 +10,7 @@
 #include "mbed.h"
 #include "arm_book_lib.h"
 #include "button.h"
-
+#include "heart_monitor_system.h"
 
 #define DEBOUNCE_BUTTON_TIME_MS                 40
 //=====[Declaration of external public global variables]=======================

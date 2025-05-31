@@ -1,4 +1,4 @@
-/** @file pulse_sensor.cpp
+/** @file pulse_sensor_module.cpp
  *  @brief Módulo para la lectura del sensor de pulso HW827.
  *
  *  Este módulo captura y procesa la señal del sensor analógico HW827
@@ -10,8 +10,8 @@
 #include "mbed.h"
 #include "arm_book_lib.h"
 #include "pulse_sensor.h"
+#include "heart_monitor_system.h"
 
-#define TIME_INCREMENT_MS 10
 #define SIZE_SAMPLE 4
 #define rise_threshold 5
 
@@ -22,10 +22,9 @@
 
 float second = 0, third = 0;
 static uint32_t pulse_counter = 0, last_beat_count = 0; // Contador de ciclos2
-
+volatile float bpm;
 
 AnalogIn hw827(A0);
-
 
 static void reset_counter();
 
@@ -34,11 +33,9 @@ static void reset_counter();
  *
  * @return Frecuencia cardíaca en BPM.
  */
-float readBPM() {
+void readBPM() {
     static float prev_value = 0.0;
     
-    float bpm = 0;
-
     float reader = hw827.read() * 3.3;  // Convertir a tension (0 - 3.3V)
 
     // Umbral de detección de pulso
@@ -48,20 +45,26 @@ float readBPM() {
     if (prev_value < threshold && reader >= threshold) {
         int count_diff = pulse_counter - last_beat_count;
         
-        if (count_diff > 45) { // Filtrar latidos muy rápidos (300ms con 10ms por ciclo)
+        if (count_diff > 45) { // Filtrar latidos muy rápidos (450ms con 10ms por ciclo)
             bpm = (6000.0 / (count_diff*0.6 + second*0.4)); // 6000 ciclos de 10ms
             
             reset_counter(); // resetea contador si es necesario
             last_beat_count = pulse_counter;  // Guardar el ciclo en el que ocurrió el pulso
-            third = second;
             second = count_diff;
         }
     }
     
     prev_value = reader;  // Actualizar valor anterior
     pulse_counter++;  // Incrementar contador en cada llamada
-    return bpm;
 }
+
+
+
+
+float getBPM() {
+    return bpm;
+    }
+
 
 /**
  * @brief Resetea el contador de ciclos si excede el límite definido.

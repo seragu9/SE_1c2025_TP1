@@ -11,8 +11,9 @@
 //=====[Declarations (prototypes) of public functions]=========================
 
 
-
-float readBPM();
+void readBPM();
+void readBPM2();
+float getBPM();
 
 //=====[#include guards - end]=================================================
 

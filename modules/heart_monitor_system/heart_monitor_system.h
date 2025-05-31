@@ -1,7 +1,8 @@
 //=====[#include guards - begin]===============================================
 
-#ifndef _BUTTON_H_
-#define _BUTTON_H_
+#ifndef _HEART_MONITOR_SYSTEM_H_
+#define _HEART_MONITOR_SYSTEM_H_
+
 
 //=====[Declaration of public defines]=========================================
 #define TIME_INCREMENT_MS 10
@@ -9,9 +10,9 @@
 
 //=====[Declarations (prototypes) of public functions]=========================
 
+void heartMonitorSystemInit();
+void heartMonitorSystemUpdate();
 
-void debounceButtonInit();
-bool debounceButtonUpdate();
 //=====[#include guards - end]=================================================
 
-#endif // _BUTTON_H_
+#endif // _HEART_MONITOR_SYSTEM_H_
