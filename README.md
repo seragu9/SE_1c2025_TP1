@@ -67,6 +67,10 @@ Al iniciar el sistema se reproduce un mensaje por el parlante:
 
   - Monitorea el estado del botón.
 
+Esto se controla mediante una maquina de estados:
+
+<a href="https://ibb.co/hxjcG8V4"><img src="https://i.ibb.co/kVfJLcXw/fsm-tp3.png" alt="fsm-tp3" style="width:500px;" border="0"></a>
+
   - Activa o desactiva el modo de lectura según el estado del botón.
 
   - En el modo de lectura activa:
@@ -83,7 +87,7 @@ Al iniciar el sistema se reproduce un mensaje por el parlante:
 
   - Umbral de Detección: Utiliza un umbral (`threshold`) para detectar el inicio de un pulso. El umbral se calcula como un valor base (1,65 V) más una variación de 12 mV.
   - Detección de Ascenso: Comprueba si el valor actual del sensor cruza el umbral desde abajo. Si la lectura anterior (`prev_value`) está por debajo del umbral y la lectura actual (`reader`) está por encima, se detecta un pulso.
-  - Filtrado de Latidos Rápidos: Calcula la diferencia entre el contador de pulsos actual (`pulse_counter`) y el último conteo de latidos (`last_beat_count`). Si esta diferencia es menor o igual a 45 (equivalente a 450ms), se descarta el latido como inválido (demasiado rápido).
+  - Filtrado de Latidos Rápidos: Calcula la diferencia entre el contador de pulsos actual (`pulse_counter`) y el último conteo de latidos (`last_beat_count`). Si esta diferencia es menor o igual a 45 (equivalente a 450 ms), se descarta el latido como inválido (demasiado rápido).
 
   <a href="https://ibb.co/fzs84wWY"><img src="https://i.ibb.co/VcsH24GW/dftp3-bpm.png" alt="dftp3_bpm" style="width:500px;" border="0"></a>
 
