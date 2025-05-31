@@ -100,7 +100,7 @@ Se implemento un circuito amplificador con el integrado LM386 como el de la sigu
 
 <a href="https://imgbb.com/"><img src="https://i.ibb.co/nNYPgSWp/lm386.png" alt="lm386" border="0">
 
-El speaker utilizado es de 8 ohm 0,5 Watt de potencia.
+Se recurre al amplificador para darle la potencia necesaria al parlante speaker utilizado. El speaker utilizado es de 8 ohm 0,5 Watt de potencia.
 
 
 ## Diagrama en bloques
