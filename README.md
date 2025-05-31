@@ -96,11 +96,11 @@ Al iniciar el sistema se reproduce un mensaje por el parlante:
 
 5. Audio
 
-Se implemento un circuito amplificador con el integrado LM386 como el de la siguiente figura:
+En este trabajo se llevó a cabo la implementación de un circuito amplificador utilizando el integrado LM386, como se muestra en la siguiente figura:
 
 <a href="https://imgbb.com/"><img src="https://i.ibb.co/nNYPgSWp/lm386.png" alt="lm386" border="0">
 
-Se recurre al amplificador para darle la potencia necesaria al parlante speaker utilizado. El speaker utilizado es de 8 ohm 0,5 Watt de potencia.
+La alimentación requerida para el correcto funcionamiento de este dispositivo se realiza mediante una pila o batería de 9 V. La utilización de este amplificador se justifica por la necesidad de suministrar la potencia adecuada al parlante, también conocido como speaker, que se emplea en la experiencia. Cabe destacar que el speaker utilizado en este contexto posee una impedancia de 8 ohmios y una potencia de 0.5 vatios.
 
 
 ## Diagrama en bloques
