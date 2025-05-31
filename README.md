@@ -69,7 +69,7 @@ Al iniciar el sistema se reproduce un mensaje por el parlante:
 
 Esto se controla mediante una maquina de estados:
 
-<a href="https://ibb.co/hxjcG8V4"><img src="https://i.ibb.co/kVfJLcXw/fsm-tp3.png" alt="fsm-tp3" border="0"></a>
+<a href="https://ibb.co/hxjcG8V4"><img src="https://i.ibb.co/kVfJLcXw/fsm-tp3.png" alt="fsm-tp3" style="width:300px;" border="0"></a>
 
   - Activa o desactiva el modo de lectura según el estado del botón.
 
