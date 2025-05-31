@@ -22,7 +22,7 @@ En el presente estudio, se llevó a cabo un análisis de los diversos proyectos 
 El sistema de navegación para interiores posibilita al usuario recibir y transferir información en diversos puntos de trabajo en recintos tales como museos, exposiciones e industrias, entre otros. Para llevar a cabo esta tarea, se requiere de la implementación de múltiples dispositivos BLE y aplicaciones destinadas a distintos tipos de dispositivos móviles como teléfonos celulares, tabletas y computadoras portátiles. Por consiguiente, el sistema ha sido evaluado con una puntuación de cinco sobre diez puntos en lo que concierne a la disponibilidad de hardware.
 En cuanto a la relevancia del proyecto, aunque su necesidad no sea imperativa, su contribución a la organización y su impacto tecnológico son notables. Por ende, se le ha asignado una calificación de cuatro sobre diez en relación a su utilidad. Asimismo, el proyecto podría extenderse en el tiempo debido a factores como la compatibilidad de dispositivos, lo cual le otorga una puntuación de tres en este aspecto.
 Dado que este proyecto se orienta más hacia el confort y la logística, su impacto social se adjudica con tres puntos. No obstante, su capacidad de escalabilidad al sumar dispositivos es destacable, a pesar de que la instalación en nuevos recintos podría requerir ajustes adicionales, lo que se traduce en una valoración de ocho en cuanto a escalabilidad. Por otra parte, la complejidad mecánica del proyecto, la cual radica en el desarrollo de software y la conexión de los distintos dispositivos, ha sido evaluada con un puntaje de nueve.
-Dado que el proyecto resulta de interés y brinda entretenimiento a los usuarios, se le asigna una puntuación de ocho en la categoría de diversión/interés. Por consiguiente, considerando que los aspectos mencionados son ponderados conforme a factores de diez, seis, ocho, cuatro, seis, seis y tres, respectivamente, se obtienen los puntajes ponderados y se observa que la suma total de estos es de 104, tal como se indica en la última columna de la Tabla 1.
+Dado que el proyecto resulta de interés y brinda entretenimiento a los usuarios, se le asigna una puntuación de ocho en la categoría de diversión/interés. Por consiguiente, considerando que los aspectos mencionados son ponderados conforme a factores de diez, seis, ocho, cuatro, seis, seis y tres, respectivamente, se obtienen los puntajes ponderados y se observa que la suma total de estos es de 236, tal como se indica en la última columna de la Tabla 1.
 
 -------
 
@@ -120,11 +120,11 @@ Por otro lado, se indica que su impacto en la salud y calidad de vida es limitad
             <tr class="highlight-green">
                 <td>Puntaje Total</td>
                 <td>-</td>
-                <td>396</td>
+                <td>236</td>
                 <td>-</td>
-                <td class="highlight-red">348</td>
+                <td class="highlight-red">326</td>
                 <td>-</td>
-                <td>282</td>
+                <td>278</td>
             </tr>
         </tbody>
 </table>
