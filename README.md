@@ -12,7 +12,7 @@
 | Directorio/Archivo        | Contenido principal                                          |
 |-------------------|--------------------------------------------------------------|
 | `SE_1c2025_TP1/`            | Archivos fuente del proyecto                                 |
-| `SE_1c2025_TP1/modules/audio/`        | Cotrol del mensaje de audio por el parlante                |
+| `SE_1c2025_TP1/modules/audio/`        | Funciones de control de audio               |
 | `SE_1c2025_TP1/modules/button/`       | Control de botón de usuario con maquina de estados      |
 | `SE_1c2025_TP11/modules/display/`    | Funciones gráficas para el display SSD1306                   |
 | `SE_1c2025_TP1/modules/heart_monitor_system/` | Lógica principal y configuración del sistema     |
@@ -32,9 +32,9 @@ La lectura de pulso cardiaco se realiza mediante un sensor como por ejemplo:
 - https://es.aliexpress.com/i/1005003939587424.html
 
 En cada paso se indicará, mediante el puerto serie y el display, el estado del proceso:
-- `Comenzando lectura...´
-- `Latidos por minuto: 76´
-- `Lectura finalizada´
+- `Comenzando lectura...`
+- `Latidos por minuto: 76`
+- `Lectura finalizada`
   
 Al iniciar el sistema se reproduce un mensaje por el parlante:
 
