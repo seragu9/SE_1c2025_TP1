@@ -130,3 +130,98 @@ Por otro lado, se indica que su impacto en la salud y calidad de vida es limitad
 </table>
 <p align="center"><em>Tabla 1.2.1: Comparación de proyectos</em></p>
 
+
+
+### **2. Elicitacion**
+
+<table border="1" cellspacing="0" cellpadding="5">
+    <thead>
+        <tr>
+            <th>Característica</th>
+            <th>MAGENE H303</th>
+            <th>POLAR Verity Sense</th>
+            <th>WELLUE O2Ring</th>
+            <th>Wellue Oxiband</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Tipo de sensor</td>
+            <td>Banda torácica con sensor ECG</td>
+            <td>Banda óptica para brazo (PPG)</td>
+            <td>Anillo con sensor óptico (PPG)</td>
+            <td>Sensor óptico PPG para SpO2 y pulso</td>
+        </tr>
+        <tr>
+            <td>Rango frecuencia cardíaca</td>
+            <td>30 - 240 bpm</td>
+            <td>30 - 220 bpm</td>
+            <td>No especificado (pulso y SpO2)</td>
+            <td>30 - 250 bpm</td>
+        </tr>
+        <tr>
+            <td>Duración batería</td>
+            <td>Hasta 1000 horas (aprox. 2.5 años uso diario 1h)</td>
+            <td>Hasta 20 horas</td>
+            <td>Hasta 14 horas</td>
+            <td>Aproximadamente 8 horas</td>
+        </tr>
+        <tr>
+            <td>Tipo de batería</td>
+            <td>Pila botón CR2032</td>
+            <td>Batería recargable integrada</td>
+            <td>Batería recargable integrada</td>
+            <td>Batería recargable integrada</td>
+        </tr>
+        <tr>
+            <td>Conectividad inalámbrica</td>
+            <td>Bluetooth 4.2 y ANT+</td>
+            <td>Bluetooth 5.0</td>
+            <td>Bluetooth 4.0</td>
+            <td>Bluetooth 4.0</td>
+        </tr>
+        <tr>
+            <td>Impermeabilidad</td>
+            <td>IP67 (resistente al agua y polvo)</td>
+            <td>Resistente al agua (IPX7)</td>
+            <td>IP24 (resistente a salpicaduras)</td>
+            <td>No especificado</td>
+        </tr>
+        <tr>
+            <td>Display</td>
+            <td>No incluye display (se conecta a apps o dispositivos externos)</td>
+            <td>No incluye display (se conecta a apps)</td>
+            <td>No incluye display (datos en app)</td>
+            <td>Sí, display OLED integrado</td>
+        </tr>
+        <tr>
+            <td>Audio / alertas</td>
+            <td>No incluye</td>
+            <td>No incluye</td>
+            <td>Vibración para alertas</td>
+            <td>Alarmas sonoras y visuales</td>
+        </tr>
+        <tr>
+            <td>Precio aproximado</td>
+            <td>$30 - $40 USD</td>
+            <td>$90 - $120 USD</td>
+            <td>$150 - $200 USD</td>
+            <td>Aproximadamente $950.000 ARS (consultar mercado local)</td>
+        </tr>
+        <tr>
+            <td>Uso principal</td>
+            <td>Monitoreo deportivo y fitness</td>
+            <td>Monitoreo deportivo y salud continua</td>
+            <td>Monitoreo médico de SpO2 y pulso</td>
+            <td>Monitoreo médico de SpO2 y frecuencia cardíaca</td>
+        </tr>
+        <tr>
+            <td>Extras</td>
+            <td>Led indicador, doble protocolo ANT+/Bluetooth</td>
+            <td>Sensor óptico avanzado, cómodo para uso prolongado</td>
+            <td>Monitor con alertas vibratorias y almacenamiento en nube</td>
+            <td>Recordatorios, almacenamiento de datos y app móvil</td>
+        </tr>
+    </tbody>
+</table>
+<p align="center"><em>Tabla 1.2.1: Comparación de productos de mercado</em></p>
