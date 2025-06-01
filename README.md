@@ -234,3 +234,39 @@ Por otro lado, se indica que su impacto en la salud y calidad de vida es limitad
 
 <p align="center"><em>Tabla 2.1: Requisitos del proyecto</em></p>
 
+
+
+| Elemento         | Definición                                                    |
+| :--------------- | :------------------------------------------------------------|
+| Causa            | Se quiere leer datos de pulso en tiempo real.                |
+| Precondición     | El sistema está iniciado y el sensor de pulso está activo.   |
+| Flujo básico     | Se debe presionar el botón de usuario para iniciar la lectura en tiempo real. El sistema muestra el pulso en el display y puerto serie, y lo transmite vía WiFi. |
+| Flujo alternativo| Si no se presiona el botón, el sistema permanece en modo espera.  |
+
+<p align="center"><em>Tabla 3.2: Caso de uso 1: Lectura de datos de pulso en tiempo real</em></p>
+
+---
+
+
+| Elemento         | Definición                                                    |
+| :--------------- | :------------------------------------------------------------|
+| Causa            | El usuario desea revisar el historial y tendencias de la frecuencia cardíaca. |
+| Precondición     | El dispositivo ha estado registrando y sincronizando datos con la aplicación web. |
+| Flujo básico     | El usuario accede a la aplicación web, selecciona `Datos Historicos` y visualiza los reportes de datos históricos. |
+| Flujo alternativo| Si no hay datos almacenados, se muestra un mensaje indicando que no hay registros disponibles. |
+
+
+<p align="center"><em>Tabla 3.3: Caso de uso 1: Visualización y análisis de datos históricos</em></p>
+
+---
+
+
+| Elemento         | Definición                                                    |
+| :--------------- | :------------------------------------------------------------|
+| Causa            | El usuario quiere modificar parámetros  de forma remota. |
+| Precondición     | El dispositivo está conectado a la red WiFi y sincronizado con la aplicación. |
+| Flujo básico     | El usuario accede a la aplicación, modifica parámetros (umbrales,  etiqueta de usuario). El dispositivo recibe y aplica los cambios automáticamente. |
+| Flujo alternativo| Si la conexión falla durante la actualización, el dispositivo mantiene la configuración anterior. |
+
+
+<p align="center"><em>Tabla 3.4: Caso de uso 1: Configuración de parámetros</em></p>
