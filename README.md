@@ -161,7 +161,7 @@ Por otro lado, se indica que su impacto en la salud y calidad de vida es limitad
         </tr>
         <tr>
             <td>Duración batería</td>
-            <td>Hasta 1000 horas (aprox. 2.5 años uso diario 1h)</td>
+            <td>Hasta 1000 horas</td>
             <td>Hasta 20 horas</td>
             <td>Hasta 14 horas</td>
             <td>Aproximadamente 8 horas</td>
@@ -206,7 +206,7 @@ Por otro lado, se indica que su impacto en la salud y calidad de vida es limitad
             <td>$30 - $40 USD</td>
             <td>$90 - $120 USD</td>
             <td>$150 - $200 USD</td>
-            <td>Aproximadamente $950.000 ARS (consultar mercado local)</td>
+            <td>$600 - $800 USD</td>
         </tr>
         <tr>
             <td>Uso principal</td>
@@ -215,13 +215,22 @@ Por otro lado, se indica que su impacto en la salud y calidad de vida es limitad
             <td>Monitoreo médico de SpO2 y pulso</td>
             <td>Monitoreo médico de SpO2 y frecuencia cardíaca</td>
         </tr>
-        <tr>
-            <td>Extras</td>
-            <td>Led indicador, doble protocolo ANT+/Bluetooth</td>
-            <td>Sensor óptico avanzado, cómodo para uso prolongado</td>
-            <td>Monitor con alertas vibratorias y almacenamiento en nube</td>
-            <td>Recordatorios, almacenamiento de datos y app móvil</td>
-        </tr>
     </tbody>
 </table>
 <p align="center"><em>Tabla 1.2.1: Comparación de productos de mercado</em></p>
+
+
+| Grupo         | ID   | Descripción                                                                                                         |
+| :------------ | :----| :------------------------------------------------------------------------------------------------------------------|
+| Inicio	 | 1.1  | El sistema intentará conectarse a la red inicialmente y establece conexión con la aplicación.                        |
+| Interfaz de usuario | 2.1  | El sistema contará con una aplicación web.						                       |
+| Visualización | 3.1  | El sistema permitirá visualizar la frecuencia cardíaca en el display local del dispositivo.                         |
+|               | 3.2  | El sistema permitirá visualizar la frecuencia cardíaca en tiempo real a través de una aplicación web o móvil.       |
+|               | 3.3  | El sistema permitirá visualizar datos históricos y tendencias de frecuencia cardíaca en la aplicación web.          |
+| Alertas       | 4.1  | El sistema debe detectar eventos anómalos (ritmo irregular, frecuencia fuera de rango) y generar alertas visuales, sonoras y notificaciones. |
+|               | 5.2  | El sistema enviará notificaciones inmediatas a los dispositivos conectados (móvil, tablet) cuando se detecten anomalías. |
+| Almacenamiento| 5.1  | El sistema almacenará localmente los datos de frecuencia cardíaca en caso de pérdida de conexión WiFi.               |
+| Configuración | 6.1  | El sistema permitirá configurar parámetros como umbrales de alerta y etiqueta de usuario desde la aplicación remota. |
+
+<p align="center"><em>Tabla 2.1: Requisitos del proyecto</em></p>
+
