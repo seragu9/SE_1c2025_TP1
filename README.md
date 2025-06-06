@@ -240,7 +240,7 @@ Se analizaron dos productos de monitoreo cardiaco. Se muestra la comparación de
 
 <p align="center"><em>Tabla 2.1: Requisitos del proyecto</em></p>
 
-** Casos de uso **
+#### Casos de uso
 
 | Elemento         | Definición                                                    |
 | :--------------- | :------------------------------------------------------------|
@@ -262,7 +262,7 @@ Se analizaron dos productos de monitoreo cardiaco. Se muestra la comparación de
 | Flujo alternativo| Si no hay datos almacenados, se muestra un mensaje indicando que no hay registros disponibles. |
 
 
-<p align="center"><em>Tabla 2.3: Caso de uso 1: Visualización y análisis de datos históricos</em></p>
+<p align="center"><em>Tabla 2.3: Caso de uso 2: Visualización y análisis de datos históricos</em></p>
 
 ---
 
@@ -275,4 +275,4 @@ Se analizaron dos productos de monitoreo cardiaco. Se muestra la comparación de
 | Flujo alternativo| Si la conexión falla durante la actualización, el dispositivo mantiene la configuración anterior. |
 
 
-<p align="center"><em>Tabla 2.4: Caso de uso 1: Configuración de parámetros</em></p>
+<p align="center"><em>Tabla 2.4: Caso de uso 3: Configuración de parámetros</em></p>
