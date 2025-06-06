@@ -137,7 +137,7 @@ Por otro lado, se indica que su impacto en la salud y calidad de vida es limitad
 
 ### **2. Elicitación de requisitos y casos de uso**
 
-Se analizaron dos productos de monitoreo cardiaco. Se muestra la comparación de características en la Tabla 2.1.
+Se analizaron cuatro productos de monitoreo cardiaco. Se muestra la comparación de características en la Tabla 2.1.
 
 <table border="1" cellspacing="0" cellpadding="5">
     <thead>
