@@ -130,9 +130,10 @@ Por otro lado, se indica que su impacto en la salud y calidad de vida es limitad
 </table>
 <p align="center"><em>Tabla 1.1: Comparación de proyectos</em></p>
 
-** Diagrama en bloques **
+#### Diagrama en bloques
 
 <a href="https://imgbb.com/"><img src="https://i.ibb.co/gZB39n3f/TPF-sag.png" alt="TPF-sag" style="width:800px;" border="0"></a>
+<p align="center"><em>Figura 1: Diagrama en bloques </em></p>
 
 ### **2. Elicitación de requisitos y casos de uso**
 
@@ -223,7 +224,7 @@ Se analizaron dos productos de monitoreo cardiaco. Se muestra la comparación de
 </table>
 <p align="center"><em>Tabla 2.1: Comparación de productos de mercado</em></p>
 
-** Requisitos del proyecto **
+#### Requisitos del proyecto
 
 | Grupo         | ID   | Descripción                                                                                                         |
 | :------------ | :----| :------------------------------------------------------------------------------------------------------------------|
