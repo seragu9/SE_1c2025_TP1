@@ -10,7 +10,7 @@
 ### **1\. Selección del proyecto a implementar**
 
 
-En el presente estudio, se llevó a cabo un análisis de los diversos proyectos considerados susceptibles de ser ejecutados. Estos fueron evaluados como se detalla en la Tabla 1. Entre los criterios de evaluación considerados se encuentran: la disponibilidad de hardware requerido, la utilidad que aportaría el proyecto, el tiempo estimado para su implementación, el potencial impacto social que este pudiera generar, su escalabilidad, la complejidad mecánica involucrada en su desarrollo y finalmente, el nivel de diversión o interés que podría generar.
+En el presente estudio, se llevó a cabo un análisis de los diversos proyectos considerados susceptibles de ser ejecutados. Estos fueron evaluados como se detalla en la Tabla 1.1. Entre los criterios de evaluación considerados se encuentran: la disponibilidad de hardware requerido, la utilidad que aportaría el proyecto, el tiempo estimado para su implementación, el potencial impacto social que este pudiera generar, su escalabilidad, la complejidad mecánica involucrada en su desarrollo y finalmente, el nivel de diversión o interés que podría generar.
 
 
 1. Sistema de navegación para interiores
@@ -27,7 +27,7 @@ Dado que el proyecto resulta de interés y brinda entretenimiento a los usuarios
 -------
 
 El sistema de monitoreo de frecuencia cardíaca es un sistema diseñado con la finalidad de seguir de cerca el ritmo cardíaco de un individuo. Su implementación se lleva a cabo mediante el uso de sensores de pulso equipados con fotodetectores, pantallas visuales y la utilización de conexiones inalámbricas. Desde la perspectiva del hardware, los sensores son de fácil adquisición, lo cual contribuye a que este proyecto obtenga una calificación de nueve puntos en términos de disponibilidad de hardware. Su aplicación se dirige a pacientes con condiciones de control y enfermedades leves, lo que le otorga una puntuación de seis en el aspecto de utilidad del proyecto. Por otro lado, la implementación de este proyecto requiere un esfuerzo moderado, reflejado en una calificación de siete puntos en cuanto al tiempo necesario para su ejecución. Esto se traduce en un impacto significativo tanto a nivel social como de salud, ya que posiblemente permita la detección temprana de problemas cardiovasculares, obteniendo así una calificación de nueve en el aspecto de impacto social.
-El sistema de monitoreo cardíaco es altamente escalable, pudiendo adaptarse tanto a usuarios individuales como a sistemas hospitalarios programables, lo cual le otorga una puntuación de ocho en escalabilidad. Además, al no requerir componentes mecánicos y al ser más electrónico y fácil de integrar, recibe una calificación de siete en cuanto a complejidad mecánica. Debido a su relevancia en el campo de la salud y las aplicaciones de internet de las cosas, este proyecto también obtiene una calificación de seis en términos de interés y diversión. De este modo, la sumatoria de los puntajes ponderados asignados a cada uno de los aspectos evaluados proporciona un total de 250 puntos.
+El sistema de monitoreo cardíaco es altamente escalable, pudiendo adaptarse tanto a usuarios individuales como a sistemas hospitalarios programables, lo cual le otorga una puntuación de ocho en escalabilidad. Además, al no requerir componentes mecánicos y al ser más electrónico y fácil de integrar, recibe una calificación de siete en cuanto a complejidad mecánica. Debido a su relevancia en el campo de la salud y las aplicaciones de internet de las cosas, este proyecto también obtiene una calificación de seis en términos de interés y diversión. De este modo, la sumatoria de los puntajes ponderados asignados a cada uno de los aspectos evaluados proporciona un total de 326 puntos.
 
 --------------
 
@@ -128,20 +128,22 @@ Por otro lado, se indica que su impacto en la salud y calidad de vida es limitad
             </tr>
         </tbody>
 </table>
-<p align="center"><em>Tabla 1.2.1: Comparación de proyectos</em></p>
+<p align="center"><em>Tabla 1.1: Comparación de proyectos</em></p>
 
 
 
-### **2. Elicitacion**
+### **2. Elicitación de requisitos y casos de uso**
+
+Se analizaron dos productos de monitoreo cardiaco. Se muestra la comparación de características en la Tabla 2.1.
 
 <table border="1" cellspacing="0" cellpadding="5">
     <thead>
         <tr>
             <th>Característica</th>
-            <th>MAGENE H303</th>
-            <th>POLAR Verity Sense</th>
-            <th>WELLUE O2Ring</th>
-            <th>Wellue Oxiband</th>
+            <th> [MAGENE H303](https://www.magene.com/en/sensors/52-h303-heart-rate-monitor.html)</th>
+            <th>[POLAR Verity Sense](https://www.polar.com/us-en/products/accessories/polar-verity-sense)</th>
+            <th>[WELLUE O2Ring](https://getwellue.com/pages/o2ring-oxygen-monitor)</th>
+            <th>[Wellue Oxiband](https://www.mercadolibre.com.ar/oximetro-de-pulso-wellue-oxiband-con-app-y-recordatorio/p/MLA50740493)</th>
         </tr>
     </thead>
     <tbody>
@@ -217,8 +219,9 @@ Por otro lado, se indica que su impacto en la salud y calidad de vida es limitad
         </tr>
     </tbody>
 </table>
-<p align="center"><em>Tabla 1.2.1: Comparación de productos de mercado</em></p>
+<p align="center"><em>Tabla 2.1: Comparación de productos de mercado</em></p>
 
+** Requisitos del proyecto **
 
 | Grupo         | ID   | Descripción                                                                                                         |
 | :------------ | :----| :------------------------------------------------------------------------------------------------------------------|
@@ -234,7 +237,7 @@ Por otro lado, se indica que su impacto en la salud y calidad de vida es limitad
 
 <p align="center"><em>Tabla 2.1: Requisitos del proyecto</em></p>
 
-
+** Casos de uso **
 
 | Elemento         | Definición                                                    |
 | :--------------- | :------------------------------------------------------------|
@@ -243,7 +246,7 @@ Por otro lado, se indica que su impacto en la salud y calidad de vida es limitad
 | Flujo básico     | Se debe presionar el botón de usuario para iniciar la lectura en tiempo real. El sistema muestra el pulso en el display y puerto serie, y lo transmite vía WiFi. |
 | Flujo alternativo| Si no se presiona el botón, el sistema permanece en modo espera.  |
 
-<p align="center"><em>Tabla 3.2: Caso de uso 1: Lectura de datos de pulso en tiempo real</em></p>
+<p align="center"><em>Tabla 2.2: Caso de uso 1: Lectura de datos de pulso en tiempo real</em></p>
 
 ---
 
@@ -256,7 +259,7 @@ Por otro lado, se indica que su impacto en la salud y calidad de vida es limitad
 | Flujo alternativo| Si no hay datos almacenados, se muestra un mensaje indicando que no hay registros disponibles. |
 
 
-<p align="center"><em>Tabla 3.3: Caso de uso 1: Visualización y análisis de datos históricos</em></p>
+<p align="center"><em>Tabla 2.3: Caso de uso 1: Visualización y análisis de datos históricos</em></p>
 
 ---
 
@@ -269,4 +272,4 @@ Por otro lado, se indica que su impacto en la salud y calidad de vida es limitad
 | Flujo alternativo| Si la conexión falla durante la actualización, el dispositivo mantiene la configuración anterior. |
 
 
-<p align="center"><em>Tabla 3.4: Caso de uso 1: Configuración de parámetros</em></p>
+<p align="center"><em>Tabla 2.4: Caso de uso 1: Configuración de parámetros</em></p>
