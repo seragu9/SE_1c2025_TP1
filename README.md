@@ -228,14 +228,14 @@ Se analizaron cuatro productos de monitoreo cardiaco. Se muestra la comparación
 
 | Grupo         | ID   | Descripción                                                                                                         |
 | :------------ | :----| :------------------------------------------------------------------------------------------------------------------|
-| Inicio	 | 1.1  | El sistema intentará conectarse a la red inicialmente y establece conexión con la aplicación.                        |
-| Interfaz de usuario | 2.1  | El sistema contará con una aplicación web.						                       |
-| Visualización | 3.1  | El sistema permitirá visualizar la frecuencia cardíaca en el display local del dispositivo.                         |
-|               | 3.2  | El sistema permitirá visualizar la frecuencia cardíaca en tiempo real a través de una aplicación web o móvil.       |
-|               | 3.3  | El sistema permitirá visualizar datos históricos y tendencias de frecuencia cardíaca en la aplicación web.          |
+| Inicio	 | 1.1  | 	El sistema intentará conectarse a la red Wi-Fi configurada en un #define hasta un máximo de 5 intentos. Si no logra conectarse, mostrará un mensaje de error en el display y continuara su uso sin conexión.                       |
+| Interfaz de usuario | 2.1  | El sistema contará con una aplicación web accesible vía navegador desde dispositivos móviles y de escritorio. La aplicación permitirá monitorear datos en tiempo real y recibir notificaciones. 	 |
+| Visualización | 3.1  | El dispositivo mostrará en su display local la frecuencia cardíaca en tiempo real, con valores numéricos.   |
+|               | 3.2  | La aplicación web y móvil permitirá visualizar la frecuencia cardíaca en tiempo real mediante valores numéricos actualizados cada dos segundos, asegurando sincronización continua con el dispositivo |
+|               | 3.3  | La aplicación almacenará y mostrará datos históricos de frecuencia cardíaca, permitiendo al usuario consultar tendencias diarias, semanales y mensuales |
 | Alertas       | 4.1  | El sistema debe detectar eventos anómalos (ritmo irregular, frecuencia fuera de rango) y generar alertas visuales, sonoras y notificaciones. |
-|               | 5.2  | El sistema enviará notificaciones inmediatas a los dispositivos conectados (móvil, tablet) cuando se detecten anomalías. |
-| Almacenamiento| 5.1  | El sistema almacenará localmente los datos de frecuencia cardíaca en caso de pérdida de conexión WiFi.               |
+|               | 5.2  | El sistema enviará notificaciones inmediatas a la aplicacion web cuando se detecten anomalías. |
+| Almacenamiento| 5.1  | El sistema almacenará localmente los datos de frecuencia cardíaca en caso de pérdida de conexión Wi-Fi.               |
 | Configuración | 6.1  | El sistema permitirá configurar parámetros como umbrales de alerta y etiqueta de usuario desde la aplicación remota. |
 
 <p align="center"><em>Tabla 2.1: Requisitos del proyecto</em></p>
@@ -246,7 +246,7 @@ Se analizaron cuatro productos de monitoreo cardiaco. Se muestra la comparación
 | :--------------- | :------------------------------------------------------------|
 | Causa            | Se quiere leer datos de pulso en tiempo real.                |
 | Precondición     | El sistema está iniciado y el sensor de pulso está activo.   |
-| Flujo básico     | Se debe presionar el botón de usuario para iniciar la lectura en tiempo real. El sistema muestra el pulso en el display y puerto serie, y lo transmite vía WiFi. |
+| Flujo básico     | Se debe presionar el botón de usuario para iniciar la lectura en tiempo real. El sistema muestra el pulso en el display y puerto serie, y lo transmite vía Wi-Fi. |
 | Flujo alternativo| Si no se presiona el botón, el sistema permanece en modo espera.  |
 
 <p align="center"><em>Tabla 2.2: Caso de uso 1: Lectura de datos de pulso en tiempo real</em></p>
@@ -270,7 +270,7 @@ Se analizaron cuatro productos de monitoreo cardiaco. Se muestra la comparación
 | Elemento         | Definición                                                    |
 | :--------------- | :------------------------------------------------------------|
 | Causa            | El usuario quiere modificar parámetros  de forma remota. |
-| Precondición     | El dispositivo está conectado a la red WiFi y sincronizado con la aplicación. |
+| Precondición     | El dispositivo está conectado a la red Wi-Fi y sincronizado con la aplicación. |
 | Flujo básico     | El usuario accede a la aplicación, modifica parámetros (umbrales,  etiqueta de usuario). El dispositivo recibe y aplica los cambios automáticamente. |
 | Flujo alternativo| Si la conexión falla durante la actualización, el dispositivo mantiene la configuración anterior. |
 
