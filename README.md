@@ -10,4 +10,4 @@
 
 ## Video demostrativo
 
-[![Video del sistema de monitoreo de frecuencia cardiaca](https://img.youtube.com/vi/3atj3ZcBGzI/0.jpg)](https://www.youtube.com/watch?v=3atj3ZcBGzI)
+[![Video del sistema de monitoreo de frecuencia cardiaca](https://img.youtube.com/vi/3atj3ZcBGzI/0.jpg)](https://www.youtube.com/watch?v=GciZKyxu_EI)
