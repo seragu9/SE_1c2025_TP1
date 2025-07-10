@@ -237,7 +237,10 @@ se realiza a través de comandos AT.
 **Figura 2.2: NODEMCU8266.**
 
 #### 2.3.4.  Sensor de pulso cardiaco.
-El modulo HW-827 . Este sensor tiene led y utiliza fotodetector para tomar los pulsos al apoyar el dedo.
+El modulo HW-827 mostrado en la figura 2.3 es un sensor óptico que permite medir la frecuencia cardíaca 
+utilizando un LED infrarrojo y un fotodiodo. Detecta los cambios en la intensidad de la luz reflejada por 
+el flujo sanguíneo en el dedo del usuario, generando señales analógicas que pueden procesarse para calcular 
+el ritmo cardíaco.
 
 <picture>
     <img alt="" src="img/hw827.png">
