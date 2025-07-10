@@ -243,7 +243,7 @@ Para la implementación del HMI se utilizó el módulo display SSD1306 [4] con p
 El comando gráfico del OLED se realiza a través de una comunicación I2C.
 
 <picture>
-    <img alt="" src="img/ssd1306.png">
+    <img alt="" src="img/SSD1306.PNG">
 </picture>
 
 **Figura 2.2: Modulo display.**
