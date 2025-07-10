@@ -300,6 +300,26 @@ El sistema se encuentra implementado en C++ utilizando Mbed. El firmware present
 #### 3.2.3. Estructura del repositorio
 
 
+| Directorio/Archivo        | Contenido principal                                          |
+|-------------------|--------------------------------------------------------------|
+| `SE_1c2025_TP1/`            | Archivos fuente del proyecto                                 |
+| `SE_1c2025_TP1/modules/button/`       | Control de botón de usuario con maquina de estados      |
+| `SE_1c2025_TP11/modules/display/`    | Funciones gráficas para el display SSD1306                   |
+| `SE_1c2025_TP1/modules/heart_monitor_system/` | Lógica principal y configuración del sistema     |
+| `SE_1c2025_TP1/modules/pulse_sensor/`    | Funciones de control de sensor de pulso cardiaco         |
+| `SE_1c2025_TP1/modules/serial_com/`    | Funciones de escritura por puerto serie                 |
+| `SE_1c2025_TP1/files/`    | Archivos utilizados (mensaje de audio)          |
+| `SE_1c2025_TP1/main.cpp`    | Archivo principal de ejecución          |
+| `SE_1c2025_TP1/mbed_app.json`    | Archivo de configuracion para el compilador     |
+
+**Figura 3.2: Estructura de directorios y modulos.**
+
+
+| Nombre de elemento        | Tipo                          |      Descripción   |
+|-------------------|-----------------------|---------------------------------------|
+| hw827         | Objeto AnalogIn      | Se usa para leer la etrada analogica A0 de la placa Nucleo donde se conecta el HW-827.      |
+
+**Figura 3.3: Objetos y Variables del modulo pulse sensor.**
 
 #### 3.2.6. Arquitectura
 En la figura 3.3 se muestra el diagrama de flujo del firmware.
