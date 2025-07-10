@@ -56,11 +56,6 @@ También se valoró la facilidad de acceso a los componentes electrónicos utili
 Con esta propuesta, se busca acercar la tecnología al cuidado cotidiano de la salud, potenciando el rol del monitoreo domiciliario dentro del ecosistema de soluciones de telemedicina e Internet de las Cosas (IoT).
 
 
-
-En la Figura 1.1 se muestra un diagrama de bloques del dispositivo. Se observan cinco grandes grupos de periféricos: comunicación, sensado, control de tiempo, simulación de actuadores y guardado de datos. La primera consiste en un microcontrolador ESP32 utilizado como módulo Wi-Fi a través de puerto serie. La segunda consiste en tres sensores: un sensor de humedad y temperatura ambiente (que se controla a través de I2C), un sensor de luz, y un sensor de humedad de tierra. El tercero consiste en un módulo RTC para poder llevar un control preciso del tiempo para las funciones por tiempo. El cuarto consiste en dos leds que simularán el encendido de los actuadores. Por último, el quinto consiste en una memoria EEPROM que se utilizará para persistir datos durante el apagado del microcontrolador.
-
-
-
 ### 1.2. Análisis de sistemas similares en el mercado
 
 Se analizaron cuatro productos de monitoreo cardiaco. Se muestra la comparación de características en la Tabla 2.1.
@@ -275,7 +270,8 @@ El modulo HW-827 . Este sensor tiene led y utiliza fotodetector para tomar los p
 ### 3.1.Hardware
 
 #### 3.1.1. Diagrama en bloques
-En la figura 3.1 se muestra un diagrama en bloques del hardware del sistema desarrollado.
+
+En la Figura 3.1 se muestra un diagrama del hardware del sistema desarrollado.
 
 <picture>
     <img alt="" src="img/dbloquesf.png">
