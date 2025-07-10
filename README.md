@@ -278,7 +278,7 @@ El modulo HW-827 . Este sensor tiene led y utiliza fotodetector para tomar los p
 En la figura 3.1 se muestra un diagrama en bloques del hardware del sistema desarrollado.
 
 <picture>
-    <img alt="" src="img/system-block-diagram.png">
+    <img alt="" src="img/dbloquesf.png">
 </picture>
 
 **Figura 3.1: Diagrama en bloque del sistema.**
