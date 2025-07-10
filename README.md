@@ -213,25 +213,6 @@ En las tablas 2.2, 2.3 y 2.4 se presentan tres casos de uso del sistema represen
 En base a la arquitectura de control y los requisitos establecidos se decidió por utilizar los módulos que se
 describen a continuación.
 
-#### 2.3.1. Módulo del microcontrolador
-Se utilizó como módulo microcontrolador la placa NUCLEO-F429ZI [5], equipada con un microcontrolador STM32F429ZI, figura 2.1.
-
-Los principales puntos tenidos en cuenta para la adopción de esta placa son:
-
-* Rendimiento y recursos: El STM32F429ZI incluye un núcleo ARM Cortex-M4 de alto rendimiento con
-capacidad de punto flotante, ideal para realizar cálculos en tiempo real y ejecutar múltiples tareas si-
-multáneamente.
-* Periféricos integrados: La placa cuenta con una amplia gama de periféricos como UART, SPI, ADC y GPIO,
-que permiten una integración eficiente con los sensores y actuadores del sistema.
-* Compatibilidad con herramientas de desarrollo: La placa es compatible con Mbed OS y herramientas como
-STM32CubeIDE, lo que facilita el desarrollo del software.
-* Documentación y soporte: La disponibilidad de documentación detallada simplifica el proceso de implementación y resolución de problemas.
-
-<picture>
-    <img alt="" src="img/nucleo.png">
-</picture>
-
-**Figura 2.1: NUCLEO-F429ZI.**
 
 #### 2.3.2. Módulo del display grafico
 Para la implementación del HMI se utilizó el módulo display SSD1306 [4] con pantalla OLED de 0.96’ que se muestra en la figura 2.2.
@@ -241,7 +222,7 @@ El comando gráfico del OLED se realiza a través de una comunicación I2C.
     <img alt="" src="img/ssd1306.PNG">
 </picture>
 
-**Figura 2.2: Modulo display.**
+**Figura 2.1: Modulo display.**
 
 #### 2.3.3. Módulo Wi-Fi
 Para la implementación de la comunicación con la computadora de supervisión a través de un navegador web
@@ -250,10 +231,10 @@ Este módulo se comunica con el microcontrolador a través de una interfaz UART 
 se realiza a través de comandos AT.
 
 <picture>
-    <img alt="" src="img/NODEMCU8266.png">
+    <img alt="" src="img/nodemcu.jpg">
 </picture>
 
-**Figura 2.3: NODEMCU8266.**
+**Figura 2.2: NODEMCU8266.**
 
 #### 2.3.4.  Sensor de pulso cardiaco.
 El modulo HW-827 . Este sensor tiene led y utiliza fotodetector para tomar los pulsos al apoyar el dedo.
@@ -262,7 +243,7 @@ El modulo HW-827 . Este sensor tiene led y utiliza fotodetector para tomar los p
     <img alt="" src="img/hw827.png">
 </picture>
 
-**Figura 2.4: Sensor de pulso cardiaco.**
+**Figura 2.3: Sensor de pulso cardiaco.**
 
 
 ## Capítulo 3. Diseño e implementación
