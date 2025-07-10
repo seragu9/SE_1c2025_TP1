@@ -292,7 +292,7 @@ F429ZI a los módulos de hardware.
 ### 3.2. Firmware
 
 #### 3.2.1. Repositorio
-Todo el código del proyecto se encuentra en el repositorio git en [7].
+Todo el código del proyecto se encuentra en el repositorio git en [3].
 
 #### 3.2.2. Tecnologı́a
 El sistema se encuentra implementado en C++ utilizando Mbed. El firmware presenta un archivo main.cpp el cual lo único que realiza es llamar a las funciones inicio de sistema, y en el lazo principal, la funcion de actualizacion del sistema.
@@ -308,6 +308,100 @@ En la figura 3.3 se muestra el diagrama de flujo del firmware.
     <img alt="" src="img/uml.png">
 </picture> 
 
-**Figura 3.3: Diagrama de fluo principal del firmware.**
+**Figura 3.3: Diagrama de flujo principal del firmware.**
 
+
+## Capítulo 4. Ensayos y resultados
+
+### 4.1. Pruebas funcionales del hardware
+Las pruebas funcionales del hardware se realizaron por módulos.
+
+### 4.1.1. Módulo Wi-Fi NODEMCU8266
+Se cargo el firmware AT en el modulo. Luego se por conexion USB y comunicacion por el puerto serie se constato el correcto envio de comandos y sus respuestas.
+
+### 4.1.2. Módulo Sesor de pulso HW-827
+
+### 4.1.3. Modulo Display OLED SSD1306
+
+### 4.1.8. Pruebas de integracion
+Las pruebas de integración realizadas se encuentran en formato de video en el siguiente enlace:
+
+Se verificó:
+* Disposición del hardware.
+* Lógica del funcionamiento del sistema.
+* Comandos por puerto serie.
+* Monitoreo mediante el servidor web.
+* Alertas de umbrales.
+
+### 4.1.9. Cumplimiento de requisitos
+En la tabla 4.1 se presenta la evaluación del cumplimiento de los requisitos iniciales de la tabla 2.1. Se evaluó
+a el estado actual de cada uno indicando en verde aquellos que ya fueron cumplidos y en rojo los requerimientos
+no cumplidos.
+
+### 4.1.10. Comparación con otros sistemas similares
+
+En la Tabla 4.2 se puede observar la continuación del análisis de la Sección 1.2, donde se puede ver ahora sumado 
+a la comparación al sistema de monitoreo realizado.
+
+### 4.2. Documentación del desarrollo realizado
+
+<table><thead>
+  <tr>
+    <th>Elemento</th>
+    <th>Referencia</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td>Presentación del proyecto</td>
+    <td>Capı́tulo 1</td>
+  </tr>
+  <tr>
+    <td>Listado de requisitos</td>
+    <td>Tabla 2.1</td>
+  </tr>
+  <tr>
+    <td>Casos de uso del proyecto</td>
+    <td>Tablas 2.2 a 2.3</td>
+  </tr>
+  <tr>
+    <td>Diagrama en bloques del sistema</td>
+    <td>Figura 3.1</td>
+  </tr>
+  <tr>
+    <td>Lista de señales</td>
+    <td>Tabla 3.1</td>
+  </tr>
+  <tr>
+    <td>Implementación del hardware</td>
+    <td>Sección 3.1</td>
+  </tr>
+  <tr>
+    <td>Módulos de software</td>
+    <td>Sección 3.2</td>
+  </tr>
+  <tr>
+    <td>Repositorio</td>
+    <td>[7]</td>
+  </tr>
+  <tr>
+    <td>Cumplimiento de requisitos</td>
+    <td>Tabla 4.1</td>
+  </tr>
+  <tr>
+    <td>Conclusiones finales</td>
+    <td>Capı́tulo 5</td>
+  </tr>
+</tbody>
+</table>
+
+**Tabla 4.2: Elementos del sumario del sistema automático para el sistema de monitoreo de frecuencia cardiaca.**
+
+## Capı́tulo 5 Conclusiones
+
+### 5.1. Resultados obtenidos
+
+
+### 5.1. Proximos pasos
+
+## Bibliografı́a
 
