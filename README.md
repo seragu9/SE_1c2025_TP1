@@ -1,13 +1,418 @@
-# Trabajo Prático N4
+# Memoria del Trabajo Final: Sistema de Monitoreo de Frecuencia Cardiaca
 
 
-**Título**: Sistema de Monitoreo de Frecuencia Cardiaca
+**Universidad de Buenas Aires**
+**Facultad de Ingeniería**
+**86.65 Sistemas Embebidos**
 
-**Alumno**: Aguirre Godoy Sergio
+**Autor:** Aguirre Godoy Sergio
 
-**Objetivo**: Desarrollar un sistema que permita controlar pulso cardiaco de una persona
+**Padrón:** 96953
+
+*Este trabajo fue realizado en la Ciudad de Buenos Aires entre Mayo y Agosto de 2025.*
+
+## Resumen
+Este proyecto presenta el desarrollo de un sistema embebido para el monitoreo continuo de la frecuencia cardíaca, implementado con la placa de desarrollo STM32 Nucleo-F429ZI. 
+El sistema emplea un sensor fotodetector para la medición del pulso, permitiendo una adquisición en tiempo real de los datos fisiológicos del usuario. 
+Incorpora una visualizacion basada en un display. La conectividad Wi-Fi facilita la transmisión de datos hacia plataformas externas para visualización remota, y permite configurar umbrales de alerta personalizables, mejorando así su adaptabilidad a distintos perfiles clínicos o deportivos. La capacidad de almacenamiento local permite el registro histórico de mediciones para análisis posterior. El diseño del sistema prioriza la modularidad del software y la integración de componentes, con el objetivo de ofrecer una solución compacta de bajo costo para aplicaciones en telemedicina y monitoreo personal de la salud.
 
 
-## Video demostrativo
+ *** *** mide entre 30 y 200 bpm
 
-[![Video del sistema de monitoreo de frecuencia cardiaca](https://img.youtube.com/vi/oUoDiP93NxQ/0.jpg)](https://www.youtube.com/watch?v=oUoDiP93NxQ)
+300 ( 3 lect de 100hz ) 2000 ( 20 lecturas)
+
+## Tabla de Contenidos
+
+- [1. Introducción](#1-introducción)
+- [2. Objetivos](#2-objetivos)
+- [3. Metodología](#3-metodología)
+- [4. Descripción del Sistema](#4-descripción-del-sistema)
+- [5. Resultados](#5-resultados)
+- [6. Conclusiones](#6-conclusiones)
+- [7. Trabajo Futuro](#7-trabajo-futuro)
+- [8. Referencias](#8-referencias)
+
+## Registro de versiones
+
+| **Revisión** | **Cambios realizados** |  **Fecha** |
+|:------------:|:----------------------:|:----------:|
+|       1      | Creación del documento | 12/06/2025 |
+|       2      |                        |            |
+|       3      |                        |            |
+
+## 1. Introducción general
+
+### 1.1. Objetivo
+  Desarrollar un sistema embebido portátil para el monitoreo de la frecuencia cardíaca en el hogar, que permita al usuario controlar su pulso en tiempo real y almacenar registros históricos accesibles de forma remota por profesionales de la salud.
+
+### 1.2. Intro
+El monitoreo de la frecuencia cardíaca es una herramienta fundamental para el cuidado de la salud, ya que permite detectar a tiempo alteraciones en el ritmo del corazón que podrían ser indicio de enfermedades cardiovasculares. Si bien existen dispositivos comerciales para esta tarea, muchos de ellos presentan limitaciones en cuanto a accesibilidad, personalización o posibilidad de seguimiento remoto por parte de profesionales médicos.
+
+El presente proyecto aborda esta problemática mediante el desarrollo de un sistema embebido que permite a cualquier persona controlar su pulso desde su hogar de forma sencilla, confiable y económica. El sistema utiliza sensores ópticos (fotodetectores) para medir el ritmo cardíaco en tiempo real y cuenta con una pantalla para visualizar la información y configurar umbrales de alerta según las necesidades del usuario. Además, se integra con una red Wi-Fi, lo que posibilita el envío de los datos registrados a plataformas externas, donde pueden ser consultados por médicos u otros profesionales de la salud para realizar un seguimiento histórico del paciente.
+
+Este proyecto se destaca especialmente por combinar monitoreo local e inalámbrico en un solo dispositivo portátil, accesible y personalizable. Esto lo diferencia de otros sistemas similares, que suelen estar pensados para un entorno clínico cerrado o requieren dispositivos adicionales para transmitir los datos. 
+También se valoró la facilidad de acceso a los componentes electrónicos utilizados, la escalabilidad del diseño para adaptarlo a diferentes contextos (hogar, clínica, institución), y su potencial impacto social, al contribuir a la prevención y detección temprana de problemas cardíacos.
+
+Con esta propuesta, se busca acercar la tecnología al cuidado cotidiano de la salud, potenciando el rol del monitoreo domiciliario dentro del ecosistema de soluciones de telemedicina e Internet de las Cosas (IoT).
+
+
+
+En la Figura 1.1 se muestra un diagrama de bloques del dispositivo. Se observan cinco grandes grupos de periféricos: comunicación, sensado, control de tiempo, simulación de actuadores y guardado de datos. La primera consiste en un microcontrolador ESP32 utilizado como módulo Wi-Fi a través de puerto serie. La segunda consiste en tres sensores: un sensor de humedad y temperatura ambiente (que se controla a través de I2C), un sensor de luz, y un sensor de humedad de tierra. El tercero consiste en un módulo RTC para poder llevar un control preciso del tiempo para las funciones por tiempo. El cuarto consiste en dos leds que simularán el encendido de los actuadores. Por último, el quinto consiste en una memoria EEPROM que se utilizará para persistir datos durante el apagado del microcontrolador.
+
+
+
+### 1.2. Análisis de sistemas similares en el mercado
+
+Se analizaron cuatro productos de monitoreo cardiaco. Se muestra la comparación de características en la Tabla 2.1.
+
+<table border="1" cellspacing="0" cellpadding="5">
+    <thead>
+        <tr>
+            <th>Característica</th>
+            <th> [MAGENE H303](https://www.magene.com/en/sensors/52-h303-heart-rate-monitor.html)</th>
+            <th>[POLAR Verity Sense](https://www.polar.com/us-en/products/accessories/polar-verity-sense)</th>
+            <th>[WELLUE O2Ring](https://getwellue.com/pages/o2ring-oxygen-monitor)</th>
+            <th>[Wellue Oxiband](https://www.mercadolibre.com.ar/oximetro-de-pulso-wellue-oxiband-con-app-y-recordatorio/p/MLA50740493)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Tipo de sensor</td>
+            <td>Banda torácica con sensor ECG</td>
+            <td>Banda óptica para brazo (PPG)</td>
+            <td>Anillo con sensor óptico (PPG)</td>
+            <td>Sensor óptico PPG para SpO2 y pulso</td>
+        </tr>
+        <tr>
+            <td>Rango frecuencia cardíaca</td>
+            <td>30 - 240 bpm</td>
+            <td>30 - 220 bpm</td>
+            <td>No especificado (pulso y SpO2)</td>
+            <td>30 - 250 bpm</td>
+        </tr>
+        <tr>
+            <td>Duración batería</td>
+            <td>Hasta 1000 horas</td>
+            <td>Hasta 20 horas</td>
+            <td>Hasta 14 horas</td>
+            <td>Aproximadamente 8 horas</td>
+        </tr>
+        <tr>
+            <td>Tipo de batería</td>
+            <td>Pila botón CR2032</td>
+            <td>Batería recargable integrada</td>
+            <td>Batería recargable integrada</td>
+            <td>Batería recargable integrada</td>
+        </tr>
+        <tr>
+            <td>Conectividad inalámbrica</td>
+            <td>Bluetooth 4.2 y ANT+</td>
+            <td>Bluetooth 5.0</td>
+            <td>Bluetooth 4.0</td>
+            <td>Bluetooth 4.0</td>
+        </tr>
+        <tr>
+            <td>Impermeabilidad</td>
+            <td>IP67 (resistente al agua y polvo)</td>
+            <td>Resistente al agua (IPX7)</td>
+            <td>IP24 (resistente a salpicaduras)</td>
+            <td>No especificado</td>
+        </tr>
+        <tr>
+            <td>Display</td>
+            <td>No incluye display (se conecta a apps o dispositivos externos)</td>
+            <td>No incluye display (se conecta a apps)</td>
+            <td>No incluye display (datos en app)</td>
+            <td>Sí, display OLED integrado</td>
+        </tr>
+        <tr>
+            <td>Audio / alertas</td>
+            <td>No incluye</td>
+            <td>No incluye</td>
+            <td>Vibración para alertas</td>
+            <td>Alarmas sonoras y visuales</td>
+        </tr>
+        <tr>
+            <td>Precio aproximado</td>
+            <td>$30 - $40 USD</td>
+            <td>$90 - $120 USD</td>
+            <td>$150 - $200 USD</td>
+            <td>$600 - $800 USD</td>
+        </tr>
+        <tr>
+            <td>Uso principal</td>
+            <td>Monitoreo deportivo y fitness</td>
+            <td>Monitoreo deportivo y salud continua</td>
+            <td>Monitoreo médico de SpO2 y pulso</td>
+            <td>Monitoreo médico de SpO2 y frecuencia cardíaca</td>
+        </tr>
+    </tbody>
+</table>
+<p align="center"><em>Tabla 2.1: Comparación de productos de mercado</em></p>
+
+## Capítulo 2. Introducción específica
+
+### 2.1. Requisitos
+
+En la tabla 2.1 se muestran los requisitos del sistema desarrollado.
+
+| Grupo         | ID   | Descripción                                                                                                         |
+| :------------ | :----| :------------------------------------------------------------------------------------------------------------------|
+| Monitoreo       | 1.1   | El sistema sensará la frecuencia cardíaca en tiempo real mediante un sensor integrado al dispositivo.               |
+|                 | 1.2   | El sistema almacenará localmente los datos de frecuencia cardíaca para asegurar la continuidad en caso de desconexión.|
+| Visualización   | 2.1   | El dispositivo mostrará en su display local la frecuencia cardíaca en tiempo real, con valores numéricos. |
+|                 | 2.2   | La aplicación web y móvil permitirá visualizar la frecuencia cardíaca en tiempo real mediante valores numéricos actualizados cada dos segundos, asegurando sincronización continua con el dispositivo. |
+|                 | 2.3   | La aplicación almacenará y mostrará datos históricos de frecuencia cardíaca, permitiendo al usuario consultar tendencias diarias, semanales y mensuales. |
+| Alertas         | 3.1   | El sistema debe detectar eventos anómalos (ritmo irregular, frecuencia fuera de rango) y generar alertas visuales, sonoras y notificaciones. |
+|                 | 3.2   | El sistema enviará notificaciones inmediatas a la aplicacion web cuando se detecten anomalías.    |
+| Configuración   | 4.1   | El sistema permitirá configurar parámetros como umbrales de alerta y etiqueta de usuario desde la aplicación remota. |
+| Comunicación    | 5.1   | El sistema intentará conectarse a la red Wi-Fi configurada en un #define hasta un máximo de 5 intentos. Si no logra conectarse, mostrará un mensaje de error en el display y continuara su uso sin conexión. |
+|                 | 5.2   | El sistema contará con una aplicación web accesible vía navegador desde dispositivos móviles y de escritorio. La aplicación permitirá monitorear datos en tiempo real y recibir notificaciones |
+| Proyecto        | 6.1   | El prototipo será acompañado de la lista de partes, el repositorio de código con su documentación, y un manual de uso. |
+
+<p align="center"><em>Tabla 2.1: Requisitos del proyecto</em></p>
+
+**Tabla 2.1: Requisitos del sistema automático.**
+
+### 2.2. Casos de uso
+En las tablas 2.2, 2.3 y 2.4 se presentan tres casos de uso del sistema representativos de su funcionalidad.
+
+| Elemento         | Definición                                                    |
+| :--------------- | :------------------------------------------------------------|
+| Causa            | Se quiere leer datos de pulso en tiempo real.                |
+| Precondición     | El sistema está iniciado y el sensor de pulso está activo.   |
+| Flujo básico     | Se debe presionar el botón de usuario para iniciar la lectura en tiempo real. El sistema muestra el pulso en el display y puerto serie, y lo transmite vía Wi-Fi. |
+| Flujo alternativo| Si no se presiona el botón, el sistema permanece en modo espera.  |
+
+<p align="center"><em>Tabla 2.2: Caso de uso 1: Lectura de datos de pulso en tiempo real</em></p>
+
+---
+
+
+| Elemento         | Definición                                                    |
+| :--------------- | :------------------------------------------------------------|
+| Causa            | El usuario desea revisar el historial y tendencias de la frecuencia cardíaca. |
+| Precondición     | El dispositivo ha estado registrando y sincronizando datos con la aplicación web. |
+| Flujo básico     | El usuario accede a la aplicación web, selecciona `Datos Historicos` y visualiza los reportes de datos históricos. |
+| Flujo alternativo| Si no hay datos almacenados, se muestra un mensaje indicando que no hay registros disponibles. |
+
+
+<p align="center"><em>Tabla 2.3: Caso de uso 2: Visualización y análisis de datos históricos</em></p>
+
+---
+
+
+| Elemento         | Definición                                                    |
+| :--------------- | :------------------------------------------------------------|
+| Causa            | El usuario quiere modificar parámetros  de forma remota. |
+| Precondición     | El dispositivo está conectado a la red Wi-Fi y sincronizado con la aplicación. |
+| Flujo básico     | El usuario accede a la aplicación, modifica parámetros (umbrales,  etiqueta de usuario). El dispositivo recibe y aplica los cambios automáticamente. |
+| Flujo alternativo| Si la conexión falla durante la actualización, el dispositivo mantiene la configuración anterior. |
+
+
+<p align="center"><em>Tabla 2.4: Caso de uso 3: Configuración de parámetros</em></p>
+
+
+### 2.3. Descripción de módulos utilizado
+
+En base a la arquitectura de control y los requisitos establecidos se decidió por utilizar los módulos que se
+describen a continuación.
+
+#### 2.3.1. Módulo del microcontrolador
+Se utilizó como módulo microcontrolador la placa NUCLEO-F429ZI [5], equipada con un microcontrolador STM32F429ZI, figura 2.1.
+
+Los principales puntos tenidos en cuenta para la adopción de esta placa son:
+
+* Rendimiento y recursos: El STM32F429ZI incluye un núcleo ARM Cortex-M4 de alto rendimiento con
+capacidad de punto flotante, ideal para realizar cálculos en tiempo real y ejecutar múltiples tareas si-
+multáneamente.
+* Periféricos integrados: La placa cuenta con una amplia gama de periféricos como UART, SPI, ADC y GPIO,
+que permiten una integración eficiente con los sensores y actuadores del sistema.
+* Compatibilidad con herramientas de desarrollo: La placa es compatible con Mbed OS y herramientas como
+STM32CubeIDE, lo que facilita el desarrollo del software.
+* Documentación y soporte: La disponibilidad de documentación detallada simplifica el proceso de implementación y resolución de problemas.
+
+<picture>
+    <img alt="" src="img/nucleo.png">
+</picture>
+
+**Figura 2.1: NUCLEO-F429ZI.**
+
+#### 2.3.2. Módulo del display grafico
+Para la implementación del HMI se utilizó el módulo display SSD1306 [4] con pantalla OLED de 0.96’ que se muestra en la figura 2.2.
+El comando gráfico del OLED se realiza a través de una comunicación I2C.
+
+<picture>
+    <img alt="" src="img/ssd1306.png">
+</picture>
+
+**Figura 2.2: Modulo display.**
+
+#### 2.3.3. Módulo Wi-Fi
+Para la implementación de la comunicación con la computadora de supervisión a través de un navegador web
+se utiliza el módulo Wi-Fi ESP12F incluido en la placa NODEMCU ESP8266 [2] de la figura 2.3.
+Este módulo se comunica con el microcontrolador a través de una interfaz UART y la configuración del mismo
+se realiza a través de comandos AT.
+
+<picture>
+    <img alt="" src="img/NODEMCU8266.png">
+</picture>
+
+**Figura 2.3: NODEMCU8266.**
+
+#### 2.3.4.  Sensor de pulso cardiaco.
+El modulo HW-827 . Este sensor tiene led y utiliza fotodetector para tomar los pulsos al apoyar el dedo.
+
+<picture>
+    <img alt="" src="img/hw827.png">
+</picture>
+
+**Figura 2.4: Sensor de pulso cardiaco.**
+
+
+## Capítulo 3. Diseño e implementación
+
+### 3.1.Hardware
+
+#### 3.1.1. Diagrama en bloques
+En la figura 3.1 se muestra un diagrama en bloques del hardware del sistema desarrollado.
+
+<picture>
+    <img alt="" src="img/system-block-diagram.png">
+</picture>
+
+**Figura 3.1: Diagrama en bloque del sistema.**
+
+#### 3.1.2. Lista de señales
+En la tabla 3.1 se listan las señales del sistema, indicando la conexión de los puertos de la placa NUCLEO-
+F429ZI a los módulos de hardware.
+
+<table><thead>
+  <tr>
+    <th colspan="2">Pin del módulo de hardware</th>
+    <th colspan="2">Pin de la placa Nucleo-F429ZI</th>
+  </tr></thead>
+<tbody>
+  <tr>
+    <td rowspan="6">ILI9341</td>
+    <td>MISO</td>
+    <td>PB4</td>
+    <td>SPI1\_MISO</td>
+  </tr>
+  <tr>
+    <td>SCKL</td>
+    <td>PB3</td>
+    <td>SPI1\_SCK</td>
+  </tr>
+  <tr>
+    <td>MOSI</td>
+    <td>PB5</td>
+    <td>SPI1\_MOSI</td>
+  </tr>
+  <tr>
+    <td>CS</td>
+    <td>PA4</td>
+    <td>SPI1\_CS</td>
+  </tr>
+  <tr>
+    <td>DCX</td>
+    <td>PC7</td>
+    <td>DO</td>
+  </tr>
+  <tr>
+    <td>RESX</td>
+    <td>PA15</td>
+    <td>DO</td>
+  </tr>
+  <tr>
+    <td rowspan="5">XPT2046</td>
+    <td>MISO</td>
+    <td>PC2</td>
+    <td>SPI2\_MISO</td>
+  </tr>
+  <tr>
+    <td>SCKL</td>
+    <td>PB13</td>
+    <td>SPI2\_SCK</td>
+  </tr>
+  <tr>
+    <td>MOSI</td>
+    <td>PB15</td>
+    <td>SPI2\_MOSI</td>
+  </tr>
+  <tr>
+    <td>CS</td>
+    <td>PB12</td>
+    <td>SPI2\_CS</td>
+  </tr>
+  <tr>
+    <td>PENIRQ</td>
+    <td>PC6</td>
+    <td>DI</td>
+  </tr>
+  <tr>
+    <td>Siren</td>
+    <td>Signal</td>
+    <td>PA3</td>
+    <td>PWM2/4</td>
+  </tr>
+  <tr>
+    <td rowspan="3">ESP01</td>
+    <td>Tx</td>
+    <td>PD5</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Rx</td>
+    <td>PD6</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Enable</td>
+    <td>PD7</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>BPA1</td>
+    <td>Signal</td>
+    <td>PC0</td>
+    <td>AI</td>
+  </tr>
+  <tr>
+    <td>MAA1</td>
+    <td>Relay</td>
+    <td>PB0</td>
+    <td>DO</td>
+  </tr>
+  <tr>
+    <td>QMB1</td>
+    <td>Relay</td>
+    <td>PB7</td>
+    <td>DO</td>
+  </tr>
+</tbody></table>
+
+**Tabla 3.1: Lista de señales del sistema.**
+
+### 3.2. Firmware
+
+#### 3.2.1. Repositorio
+Todo el código del proyecto se encuentra en el repositorio git en [7].
+
+#### 3.2.2. Tecnologı́a
+El sistema se encuentra implementado en C++ utilizando Mbed. El firmware presenta un archivo main.cpp el cual lo único que realiza es llamar a las funciones inicio de sistema, y en el lazo principal, la funcion de actualizacion del sistema.
+
+#### 3.2.3. Estructura del repositorio
+
+
+
+#### 3.2.6. Arquitectura
+En la figura 3.3 se muestra el diagrama de flujo del firmware.
+
+<picture>
+    <img alt="" src="img/uml.png">
+</picture> 
+
+**Figura 3.3: Diagrama de fluo principal del firmware.**
+
+
