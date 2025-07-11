@@ -338,6 +338,7 @@ F429ZI a los módulos de hardware.
 </tbody>
 </table>
 <p>&nbsp;</p>
+
 **Tabla 3.1: Lista de señales del sistema.**
 
 ### 3.2. Firmware
@@ -363,20 +364,96 @@ El sistema se encuentra implementado en C++ utilizando Mbed. El firmware present
 | `SE_1c2025_TP1/main.cpp`    | Archivo principal de ejecución          |
 | `SE_1c2025_TP1/mbed_app.json`    | Archivo de configuracion para el compilador     |
 
-**Figura 3.2: Estructura de directorios y modulos.**
+**Tabla 3.2: Estructura de directorios y modulos.**
 
 
 | Nombre de elemento        | Tipo                          |      Descripción   |
 |-------------------|-----------------------|---------------------------------------|
 | hw827         | Objeto AnalogIn      | Se usa para leer la etrada analogica A0 de la placa Nucleo donde se conecta el HW-827.      |
+| bpm         | Variable float      | Se usa guardar valores finales calculados de bpm (usa valor anterior).      |
+| bpm_actual         | Variable float      | Se usa guardar el valor calculado actual de bpm.      |
+| intervals         | Variable uint32      | Guarda los ultimos cuatro valores de intervalos entre pulsos.     |
 
-**Figura 3.3: Objetos y Variables del modulo pulse sensor.**
+**Tabla 3.3: Objetos y Variables del modulo pulse_sensor.**
+
+
+| Nombre de elemento        | Tipo                          |      Descripción   |
+|-------------------|-----------------------|---------------------------------------|
+| i2c         | Objeto I2C      | Se usa para la comunicacion I2C donde se conecta el SSD1306.      |
+
+**Tabla 3.4: Objetos y Variables del modulo display.**
+
+
+| Nombre de elemento        | Tipo                          |      Descripción   |
+|-------------------|-----------------------|---------------------------------------|
+| wifiComState_t         | Typedef      | Se usa para informar el estado de la maquina de estados de comunicacion Wi-Fi.      |
+| uartWifi         | Objeto UnbufferedSerial      | Se usa para la comunicacion serie del modulo NODEMCU8266      |
+
+**Tabla 3.5: Objetos y Variables del modulo wifi_com.**
+
+| Nombre de elemento        | Tipo                          |      Descripción   |
+|-------------------|-----------------------|---------------------------------------|
+| buttonState_t         | Typedef      | Se usa para informar el estado de la maquina de estados de pulsado de boton.      |
+| button         | Objeto DigitalIn      | Se usa para detectar estado del boton de usuario BUTTON1     |
+
+**Tabla 3.6: Objetos y Variables del modulo button.**
+
+
+A partir de la tabla 3.7 a tabla 3.12 se presentan las funciones publicas de cada modulo.
+
+| Nombre de la función        | Descripción                          |      Archivo que lo usa   |
+|-------------------|-----------------------|---------------------------------------|
+| heartMonitorSystemInit()         | Inicializa todos los modulos y configuración inicial del sistema.      | main.cpp   |
+| heartMonitorSystemUpdate()        | Se encarga la logica del programando llamando a funciones de actualización.      | main.cpp   |
+
+**Tabla 3.7: Funciones publicas del modulo heart_monitor_system.**
+
+
+
+| Nombre de la función        | Descripción                          |      Archivo que lo usa   |
+|-------------------|-----------------------|---------------------------------------|
+| readBPM()         | Calcula un valor de lectura de pulso cardiaco      | heart_monitor_system.cpp   |
+| getBPM()        | Entrega el valor obtenido del ultimo calculo de pulso cardiaco      | heart_monitor_system.cpp y wifi_com.cpp   |
+
+**Tabla 3.8: Funciones publicas del modulo pulse_sensor.**
+
+
+| Nombre de la función        | Descripción                          |      Archivo que lo usa   |
+|-------------------|-----------------------|---------------------------------------|
+| ssd1306_init()         | Inicializa el display OLED SSD1306      | heart_monitor_system.cpp   |
+| ssd1306_clear_display()        | Borra toda la pantalla del display      | heart_monitor_system.cpp   |
+| ssd1306_print()        | Imprime caracteres en display considerando posicion    | heart_monitor_system.cpp   |
+| ssd1306_clear_display_middle()       | Borra parte media o central del display (lectura de BPM)     | heart_monitor_system.cpp   |
+| ssd1306_clear_top_rows()        | Borra parte superior del display (alertas)      | heart_monitor_system.cpp  |
+
+**Tabla 3.9: Funciones publicas del modulo display.**
+
+| Nombre de la función        | Descripción                          |      Archivo que lo usa   |
+|-------------------|-----------------------|---------------------------------------|
+| debounceButtonInit()         | Inicia el  estado inicial del boton de usuario      | heart_monitor_system.cpp   |
+| debounceButtonUpdate()        | Actualiza estado de boton mediante una maquina de estados      | heart_monitor_system.cpp   |
+
+**Tabla 3.10: Funciones publicas del modulo button.**
+
+| Nombre de la función        | Descripción                          |      Archivo que lo usa   |
+|-------------------|-----------------------|---------------------------------------|
+| addRegisterData()         | Agrega una lectura al registro de lecturas con fecha y hora     | heart_monitor_system.cpp   |
+
+**Tabla 3.11: Funciones publicas del modulo data_history.**
+
+| Nombre de la función        | Descripción                          |      Archivo que lo usa   |
+|-------------------|-----------------------|---------------------------------------|
+| wifiComInit()         | Inicia el modulo Wi-Fi mediante comandos AT      | heart_monitor_system.cpp   |
+| wifiComUpdate()      | Actualiza la conexion Wi-Fi mediante una maquina de estados      | heart_monitor_system.cpp   |
+
+**Tabla 3.12: Funciones publicas del modulo button.**
+
 
 #### 3.2.6. Arquitectura
 En la figura 3.3 se muestra el diagrama de flujo del firmware.
 
 <picture>
-    <img alt="" src="img/uml.png">
+    <img alt="" src="img/dflujo_f.png">
 </picture> 
 
 **Figura 3.3: Diagrama de flujo principal del firmware.**
