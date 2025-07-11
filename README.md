@@ -16,14 +16,9 @@ Este proyecto presenta el desarrollo de un sistema embebido para el monitoreo co
 El sistema emplea un sensor fotodetector para la medición del pulso, permitiendo una adquisición en tiempo real de los datos fisiológicos del usuario. 
 Incorpora una visualizacion basada en un display. La conectividad Wi-Fi facilita la transmisión de datos hacia plataformas externas para visualización remota, y permite configurar umbrales de alerta personalizables, mejorando así su adaptabilidad a distintos perfiles clínicos o deportivos. La capacidad de almacenamiento local permite el registro histórico de mediciones para análisis posterior. El diseño del sistema prioriza la modularidad del software y la integración de componentes, con el objetivo de ofrecer una solución compacta de bajo costo para aplicaciones en telemedicina y monitoreo personal de la salud.
 
-
- *** *** mide entre 30 y 200 bpm
-
-300 ( 3 lect de 100hz ) 2000 ( 20 lecturas)
-
 ## Tabla de Contenidos
 
-- [1. Introducción](#1-introducción)
+- [1. Introducción](#1.-introducción-general)
 - [2. Objetivos](#2-objetivos)
 - [3. Metodología](#3-metodología)
 - [4. Descripción del Sistema](#4-descripción-del-sistema)
@@ -678,9 +673,25 @@ a la comparación al sistema de monitoreo realizado.
 ## Capı́tulo 5 Conclusiones
 
 ### 5.1. Resultados obtenidos
+El desarrollo del sistema de monitoreo de frecuencia cardíaca permitió cumplir con los objetivos planteados inicialmente. Se logró la integración exitosa de un sensor óptico de pulso, un display OLED para la visualización en tiempo real de los latidos por minuto (BPM), y un módulo de conectividad Wi-Fi para la transmisión, tanto de lecturas en tiempo real, alertas y datos históricos, en una plataforma remota.
 
+El sistema mostró una lectura estable del pulso en tiempo real durante las pruebas. La implementación de umbrales configurables permitió activar alertas cuando la frecuencia cardíaca superó o descendió de ciertos valores establecidos, lo que demuestra su potencial como herramienta preventiva o de monitoreo continuo en contextos personales o deportivos.
+
+Además, se logró un registro automático de los datos, lo cual facilita su análisis posterior y el seguimiento de patrones a lo largo del tiempo. La interfaz en el display OLED resultó clara y funcional para la visualización inmediata del estado del usuario.
 
 ### 5.1. Proximos pasos
 
-## Bibliografı́a
+Si bien el sistema ha demostrado un buen funcionamiento, se identificaron oportunidades de mejora y expansión que podrían implementarse en futuras iteraciones del proyecto:
 
+1. Agregar una conectividad Bluetooth para tener mayor control y configuracion de redes Wi-Fi.
+2. Incorporar el uso de baterias para tener un sistema portable.
+1. Mejora de la precisión del sensor: Evaluar la integración de sensores ópticos más avanzados o de múltiples canales para reducir interferencias y mejorar la fiabilidad de las mediciones en distintos tipos de piel y condiciones de movimiento.
+2. Almacenamiento en la nube y análisis inteligente: Incorporar servicios en la nube para almacenamiento seguro, y aplicar algoritmos de análisis de datos para detectar anomalías o tendencias relevantes en la frecuencia cardíaca del usuario.
+
+    
+## Bibliografı́a
+[1]  WORLD FAMOUS ELECTRONICS llc. [HW-827 Datasheet.](https://media.digikey.com/pdf/Data%20Sheets/Pulse%20Sensor%20PDFs/Pulse_Sensor.pdf)
+[2] SOLOMON SYSTECH SEMICONDUCTOR TECHNICAL DATA. [SSD1306 Datasheet.](https://cdn-shop.adafruit.com/datasheets/SSD1306.pdf)
+[3] Espressif Systems. [ESP8266 Datasheet.](https://www.espressif.com/sites/default/files/documentation/0a-esp8266ex_datasheet_en.pdf) 
+[4] [Lexus2k. Bibliotecas y drivers de Displays.](https://github.com/lexus2k/ssd1306)
+[5] Sergio Aguirre. Repositorio de proyecto. [Sistema de monitoreo de frecuencia cardiaca.](https://github.com/seragu9/SE_1c2025_TP1/TPFinal/)
