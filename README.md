@@ -18,7 +18,7 @@ Incorpora una visualizacion basada en un display. La conectividad Wi-Fi facilita
 
 ## Tabla de Contenidos
 
-- [1. Introducción](#1.-introducción-general)
+- [1. Introducción](#1-introduccion-general)
 - [2. Objetivos](#2-objetivos)
 - [3. Metodología](#3-metodología)
 - [4. Descripción del Sistema](#4-descripción-del-sistema)
@@ -691,7 +691,12 @@ Si bien el sistema ha demostrado un buen funcionamiento, se identificaron oportu
     
 ## Bibliografı́a
 [1]  WORLD FAMOUS ELECTRONICS llc. [HW-827 Datasheet.](https://media.digikey.com/pdf/Data%20Sheets/Pulse%20Sensor%20PDFs/Pulse_Sensor.pdf)
+
 [2] SOLOMON SYSTECH SEMICONDUCTOR TECHNICAL DATA. [SSD1306 Datasheet.](https://cdn-shop.adafruit.com/datasheets/SSD1306.pdf)
+
 [3] Espressif Systems. [ESP8266 Datasheet.](https://www.espressif.com/sites/default/files/documentation/0a-esp8266ex_datasheet_en.pdf) 
+
 [4] [Lexus2k. Bibliotecas y drivers de Displays.](https://github.com/lexus2k/ssd1306)
+
 [5] Sergio Aguirre. Repositorio de proyecto. [Sistema de monitoreo de frecuencia cardiaca.](https://github.com/seragu9/SE_1c2025_TP1/TPFinal/)
+
