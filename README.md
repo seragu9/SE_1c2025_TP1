@@ -234,6 +234,8 @@ se realiza a través de comandos AT.
     <img alt="" src="img/nodemcu.jpg">
 </picture>
 
+Para poder dibujar los caracteres en este display, se hizo uso de la definicion de variables proporcionada por la biblioteca Lexus2k [6].
+
 **Figura 2.2: NODEMCU8266.**
 
 #### 2.3.4.  Sensor de pulso cardiaco.
