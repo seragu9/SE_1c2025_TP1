@@ -219,7 +219,7 @@ Para la implementación del HMI se utilizó el módulo display SSD1306 [4] con p
 El comando gráfico del OLED se realiza a través de una comunicación I2C.
 
 <picture>
-    <img alt="" src="img/ssd1306.PNG">
+    <img alt="" src="img/ssd1306.PNG" width="300">
 </picture>
 
 **Figura 2.1: Modulo display.**
@@ -231,7 +231,7 @@ Este módulo se comunica con el microcontrolador a través de una interfaz UART 
 se realiza a través de comandos AT.
 
 <picture>
-    <img alt="" src="img/nodemcu.jpg">
+    <img alt="" src="img/nodemcu.jpg" width="300">
 </picture>
 
 Para poder dibujar los caracteres en este display, se hizo uso de la definicion de variables proporcionada por la biblioteca Lexus2k [6].
