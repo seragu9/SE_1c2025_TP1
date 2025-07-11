@@ -269,6 +269,75 @@ En la Figura 3.1 se muestra un diagrama del hardware del sistema desarrollado.
 En la tabla 3.1 se listan las señales del sistema, indicando la conexión de los puertos de la placa NUCLEO-
 F429ZI a los módulos de hardware.
 
+<table style="width: 415px;">
+<thead>
+<tr style="height: 23px;">
+<th style="height: 23px; width: 202px;" colspan="2">Pin del m&oacute;dulo de hardware</th>
+<th style="height: 23px; width: 208px;" colspan="2">Pin de la placa Nucleo-F429ZI</th>
+</tr>
+</thead>
+<tbody>
+<tr style="height: 23px;">
+<td style="height: 92px; width: 132.467px;" rowspan="4">SSD1306</td>
+<td style="height: 23px; width: 69.5333px;">SCL</td>
+<td style="height: 23px; width: 69px;">PB_8</td>
+<td style="height: 23px; width: 139px;">I2C1_SCL</td>
+</tr>
+<tr style="height: 23px;">
+<td style="height: 23px; width: 69.5333px;">SDA</td>
+<td style="height: 23px; width: 69px;">PB_9</td>
+<td style="height: 23px; width: 139px;">I2C1_SDA</td>
+</tr>
+<tr style="height: 23px;">
+<td style="height: 23px; width: 69.5333px;">VCC</td>
+<td style="height: 23px; width: 69px;">3V3</td>
+<td style="height: 23px; width: 139px;">3V3</td>
+</tr>
+<tr style="height: 23px;">
+<td style="height: 23px; width: 69.5333px;">GND</td>
+<td style="height: 23px; width: 69px;">GND</td>
+<td style="height: 23px; width: 139px;">GND</td>
+</tr>
+<tr style="height: 23px;">
+<td style="height: 69.5px; width: 132.467px;" rowspan="3">HW-827</td>
+<td style="height: 23px; width: 69.5333px;">VCC</td>
+<td style="height: 23px; width: 69px;">3V3</td>
+<td style="height: 23px; width: 139px;">3V3</td>
+</tr>
+<tr style="height: 23.5px;">
+<td style="height: 23.5px; width: 69.5333px;">SIGNAL</td>
+<td style="height: 23.5px; width: 69px;">PA_3</td>
+<td style="height: 23.5px; width: 139px;">A0</td>
+</tr>
+<tr style="height: 23px;">
+<td style="height: 23px; width: 69.5333px;">GND</td>
+<td style="height: 23px; width: 69px;">GND</td>
+<td style="height: 23px; width: 139px;">GND</td>
+</tr>
+<tr style="height: 23px;">
+<td style="height: 92px; width: 132.467px;" rowspan="4">NODEMCU8266</td>
+<td style="height: 23px; width: 69.5333px;">TX</td>
+<td style="height: 23px; width: 69px;">PE_9</td>
+<td style="height: 23px; width: 139px;">&nbsp;UART7_RX</td>
+</tr>
+<tr style="height: 23px;">
+<td style="height: 23px; width: 69.5333px;">RX</td>
+<td style="height: 23px; width: 69px;">PE_8</td>
+<td style="height: 23px; width: 139px;">&nbsp;UART7_TX</td>
+</tr>
+<tr style="height: 23px;">
+<td style="height: 23px; width: 69.5333px;">VIN</td>
+<td style="height: 23px; width: 69px;">5V</td>
+<td style="height: 23px; width: 139px;">5V</td>
+</tr>
+<tr style="height: 23px;">
+<td style="height: 23px; width: 69.5333px;">GND</td>
+<td style="height: 23px; width: 69px;">GND</td>
+<td style="height: 23px; width: 139px;">&nbsp;GND</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
 **Tabla 3.1: Lista de señales del sistema.**
 
 ### 3.2. Firmware
