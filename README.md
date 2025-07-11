@@ -472,6 +472,7 @@ Para este caso se evaluaron las funciones desarrolladas de escritura y borrado, 
 ### 4.1.8. Pruebas de integracion
 Las pruebas de integración realizadas se encuentran en formato de video en el siguiente enlace:
 
+[![Video del sistema de monitoreo de frecuencia cardiaca](https://img.youtube.com/vi/oUoDiP93NxQ/0.jpg)](https://www.youtube.com/watch?v=oUoDiP93NxQ)
 
 
 Donde se verificó:
@@ -655,7 +656,7 @@ a la comparación al sistema de monitoreo realizado.
   </tr>
   <tr>
     <td>Repositorio</td>
-    <td>[7]</td>
+    <td>[5](#ref5)</td>
   </tr>
   <tr>
     <td>Cumplimiento de requisitos</td>
@@ -698,5 +699,5 @@ Si bien el sistema ha demostrado un buen funcionamiento, se identificaron oportu
 
 [4] [Lexus2k. Bibliotecas y drivers de Displays.](https://github.com/lexus2k/ssd1306)
 
-[5] Sergio Aguirre. Repositorio de proyecto. [Sistema de monitoreo de frecuencia cardiaca.](https://github.com/seragu9/SE_1c2025_TP1/TPFinal/)
+<a id="ref5">[5]</a>. Sergio Aguirre. Repositorio de proyecto. [Sistema de monitoreo de frecuencia cardiaca.](https://github.com/seragu9/SE_1c2025_TP1/TPFinal/)
 
