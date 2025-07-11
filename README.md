@@ -465,31 +465,164 @@ En la figura 3.3 se muestra el diagrama de flujo del firmware.
 Las pruebas funcionales del hardware se realizaron por módulos.
 
 ### 4.1.1. Módulo Wi-Fi NODEMCU8266
-Se cargo el firmware AT en el modulo. Luego se por conexion USB y comunicacion por el puerto serie se constato el correcto envio de comandos y sus respuestas.
+Se cargo el firmware AT en el modulo. Luego por conexion USB y comunicacion por el puerto serie se constato el correcto envio de comandos y sus respuestas. Ademas, mediante esos comandos se estableció conexion con la red usada por defecto.
 
 ### 4.1.2. Módulo Sesor de pulso HW-827
+El estudio inició con la toma de una medida de la señal analógica a través de un osciloscopio, con el propósito de analizar tanto los niveles como el comportamiento de dicha señal durante la lectura de pulsos. Para ello, se procedió a la conexión de la señal a los 3,3 V y GND de la placa núcleo, evidenciándose la presencia de picos de amplitud asociados a la detección de pulsos, junto con la observación de ruido de interferencia superpuesto en la señal. 
+Posteriormente, se llevó a cabo un experimento adicional empleando la placa núcleo junto con el software SerialPlot. A través de esta herramienta, se lograron determinar la frecuencia de muestreo óptima, los umbrales de detección y los filtros necesarios para asegurar una correcta lectura de pulsos.
 
 ### 4.1.3. Modulo Display OLED SSD1306
+
+Para este caso se evaluaron las funciones desarrolladas de escritura y borrado, visualizando la pantalla del display. Se constato que los datos en la pantalla fueran los correctos y luego el borrado de pantalla.
 
 ### 4.1.8. Pruebas de integracion
 Las pruebas de integración realizadas se encuentran en formato de video en el siguiente enlace:
 
-Se verificó:
+
+
+Donde se verificó:
 * Disposición del hardware.
 * Lógica del funcionamiento del sistema.
 * Comandos por puerto serie.
 * Monitoreo mediante el servidor web.
 * Alertas de umbrales.
+* Registro de datos historicos.
 
 ### 4.1.9. Cumplimiento de requisitos
 En la tabla 4.1 se presenta la evaluación del cumplimiento de los requisitos iniciales de la tabla 2.1. Se evaluó
 a el estado actual de cada uno indicando en verde aquellos que ya fueron cumplidos y en rojo los requerimientos
 no cumplidos.
 
+
+| Grupo         | ID   | Descripción                                                                                                         |
+| :------------ | :----| :------------------------------------------------------------------------------------------------------------------|
+| Monitoreo       | 1.1   | El sistema sensará la frecuencia cardíaca en tiempo real mediante un sensor integrado al dispositivo.               |
+|                 | 1.2   | El sistema almacenará localmente los datos de frecuencia cardíaca para asegurar la continuidad en caso de desconexión.|
+| Visualización   | 2.1   | El dispositivo mostrará en su display local la frecuencia cardíaca en tiempo real, con valores numéricos. |
+|                 | 2.2   | La aplicación web y móvil permitirá visualizar la frecuencia cardíaca en tiempo real mediante valores numéricos actualizados cada dos segundos, asegurando sincronización continua con el dispositivo. |
+|                 | 2.3   | La aplicación almacenará y mostrará datos históricos de frecuencia cardíaca, permitiendo al usuario consultar tendencias diarias, semanales y mensuales. |
+| Alertas         | 3.1   | El sistema debe detectar eventos anómalos (ritmo irregular, frecuencia fuera de rango) y generar alertas visuales, sonoras y notificaciones. |
+|                 | 3.2   | El sistema enviará notificaciones inmediatas a la aplicacion web cuando se detecten anomalías.    |
+| Configuración   | 4.1   | El sistema permitirá configurar parámetros como umbrales de alerta y etiqueta de usuario desde la aplicación remota. |
+| Comunicación    | 5.1   | El sistema intentará conectarse a la red Wi-Fi configurada en un #define hasta un máximo de 5 intentos. Si no logra conectarse, mostrará un mensaje de error en el display y continuara su uso sin conexión. |
+|                 | 5.2   | El sistema contará con una aplicación web accesible vía navegador desde dispositivos móviles y de escritorio. La aplicación permitirá monitorear datos en tiempo real y recibir notificaciones |
+| Proyecto        | 6.1   | El prototipo será acompañado de la lista de partes, el repositorio de código con su documentación, y un manual de uso. |
+
+
+**Tabla 4.1: Estado de los requisitos.**
+
+
 ### 4.1.10. Comparación con otros sistemas similares
 
 En la Tabla 4.2 se puede observar la continuación del análisis de la Sección 1.2, donde se puede ver ahora sumado 
 a la comparación al sistema de monitoreo realizado.
+
+<table border="1" cellspacing="0" cellpadding="5">
+<thead>
+<tr>
+<th>Caracter&iacute;stica</th>
+<th>[MAGENE H303](https://www.magene.com/en/sensors/52-h303-heart-rate-monitor.html)</th>
+<th>[POLAR Verity Sense](https://www.polar.com/us-en/products/accessories/polar-verity-sense)</th>
+<th>[WELLUE O2Ring](https://getwellue.com/pages/o2ring-oxygen-monitor)</th>
+<th>&nbsp;</th>
+<th>[Wellue Oxiband](https://www.mercadolibre.com.ar/oximetro-de-pulso-wellue-oxiband-con-app-y-recordatorio/p/MLA50740493)</th>
+<th>Sistema de monitoreo de frecuencia cardiaca (Este proyecto)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tipo de sensor</td>
+<td>Banda tor&aacute;cica con sensor ECG</td>
+<td>Banda &oacute;ptica para brazo (PPG)</td>
+<td>Anillo con sensor &oacute;ptico (PPG)</td>
+<td>&nbsp;</td>
+<td>Sensor &oacute;ptico PPG para SpO2 y pulso</td>
+<td>&Oacute;ptico</td>
+</tr>
+<tr>
+<td>Rango frecuencia card&iacute;aca</td>
+<td>30 - 240 bpm</td>
+<td>30 - 220 bpm</td>
+<td>No especificado (pulso y SpO2)</td>
+<td>&nbsp;</td>
+<td>30 - 250 bpm</td>
+<td>30 - 220 bpm</td>
+</tr>
+<tr>
+<td>Duraci&oacute;n bater&iacute;a</td>
+<td>Hasta 1000 horas</td>
+<td>Hasta 20 horas</td>
+<td>Hasta 14 horas</td>
+<td>&nbsp;</td>
+<td>Aproximadamente 8 horas</td>
+<td>&nbsp;-</td>
+</tr>
+<tr>
+<td>Tipo de bater&iacute;a</td>
+<td>Pila bot&oacute;n CR2032</td>
+<td>Bater&iacute;a recargable integrada</td>
+<td>Bater&iacute;a recargable integrada</td>
+<td>&nbsp;</td>
+<td>Bater&iacute;a recargable integrada</td>
+<td>&nbsp;-</td>
+</tr>
+<tr>
+<td>Conectividad inal&aacute;mbrica</td>
+<td>Bluetooth 4.2 y ANT+</td>
+<td>Bluetooth 5.0</td>
+<td>Bluetooth 4.0</td>
+<td>&nbsp;</td>
+<td>Bluetooth 4.0</td>
+<td>Wi-Fi</td>
+</tr>
+<tr>
+<td>Impermeabilidad</td>
+<td>IP67 (resistente al agua y polvo)</td>
+<td>Resistente al agua (IPX7)</td>
+<td>IP24 (resistente a salpicaduras)</td>
+<td>&nbsp;</td>
+<td>No especificado</td>
+<td>&nbsp;-</td>
+</tr>
+<tr>
+<td>Display</td>
+<td>No incluye display (se conecta a apps o dispositivos externos)</td>
+<td>No incluye display (se conecta a apps)</td>
+<td>No incluye display (datos en app)</td>
+<td>&nbsp;</td>
+<td>S&iacute;, display OLED integrado</td>
+<td>&nbsp;S&iacute;, display OLED integrado</td>
+</tr>
+<tr>
+<td>Audio / alertas</td>
+<td>No incluye</td>
+<td>No incluye</td>
+<td>Vibraci&oacute;n para alertas</td>
+<td>&nbsp;</td>
+<td>Alarmas sonoras y visuales</td>
+<td>Alertas visuales</td>
+</tr>
+<tr>
+<td>Precio aproximado</td>
+<td>$30 - $40 USD</td>
+<td>$90 - $120 USD</td>
+<td>$150 - $200 USD</td>
+<td>&nbsp;</td>
+<td>$600 - $800 USD</td>
+<td>$30 - $52 USD</td>
+</tr>
+<tr>
+<td>Uso principal</td>
+<td>Monitoreo deportivo y fitness</td>
+<td>Monitoreo deportivo y salud continua</td>
+<td>Monitoreo m&eacute;dico de SpO2 y pulso</td>
+<td>&nbsp;</td>
+<td>Monitoreo m&eacute;dico de SpO2 y frecuencia card&iacute;aca</td>
+<td>Monitoreo de salud hogareño.</td>
+</tr>
+</tbody>
+</table>
+<p align="center"><em>Tabla 2.1: Comparación de características de productos analizados previamente y este proyecto</em></p>
 
 ### 4.2. Documentación del desarrollo realizado
 
