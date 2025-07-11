@@ -656,7 +656,7 @@ a la comparación al sistema de monitoreo realizado.
   </tr>
   <tr>
     <td>Repositorio</td>
-    <td>[5](#ref5)</td>
+    <td>[5]</td>
   </tr>
   <tr>
     <td>Cumplimiento de requisitos</td>
@@ -697,7 +697,7 @@ Si bien el sistema ha demostrado un buen funcionamiento, se identificaron oportu
 
 [3] Espressif Systems. [ESP8266 Datasheet.](https://www.espressif.com/sites/default/files/documentation/0a-esp8266ex_datasheet_en.pdf) 
 
-[4] [Lexus2k. Bibliotecas y drivers de Displays.](https://github.com/lexus2k/ssd1306)
+[4] Lexus2k.[Bibliotecas y drivers de Displays.](https://github.com/lexus2k/ssd1306)
 
-<a id="ref5">[5]</a>. Sergio Aguirre. Repositorio de proyecto. [Sistema de monitoreo de frecuencia cardiaca.](https://github.com/seragu9/SE_1c2025_TP1/TPFinal/)
+<a id="ref5">[5]</a>. Sergio Aguirre. Repositorio de proyecto. [Sistema de monitoreo de frecuencia cardiaca.](https://github.com/seragu9/SE_1c2025_TP1/tree/TPFinal/)
 
