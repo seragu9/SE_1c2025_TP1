@@ -22,7 +22,7 @@ Incorpora una visualizacion basada en un display. La conectividad Wi-Fi facilita
 - [2. Introducción Específica](#capítulo-2-Introducción-específica)
 - [3. Diseño e Implementación](#capítulo-3-Diseño-e-implementación)
 - [4. Ensayos y resultados](#capítulo-4-Ensayos-y-resultados)
-- [5. Conclusiones](#5-capítulo-5-conclusiones)
+- [5. Conclusiones](#capı́tulo-5-conclusiones)
 
 ## Registro de versiones
 
