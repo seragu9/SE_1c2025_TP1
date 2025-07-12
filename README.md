@@ -21,11 +21,8 @@ Incorpora una visualizacion basada en un display. La conectividad Wi-Fi facilita
 - [1. Introducción](#1-introducción-general)
 - [2. Introducción Específica](#capítulo-2-Introducción-específica)
 - [3. Diseño e Implementación](#capítulo-3-Diseño-e-implementación)
-- [4. Descripción del Sistema](#4-descripción-del-sistema)
-- [5. Resultados](#5-resultados)
-- [6. Conclusiones](#6-conclusiones)
-- [7. Trabajo Futuro](#7-trabajo-futuro)
-- [8. Referencias](#8-referencias)
+- [4. Ensayos y resultados](#capítulo-4-Ensayos-y-resultados)
+- [5. Conclusiones](#5-capítulo-5-Conclusiones)
 
 ## Registro de versiones
 
@@ -212,9 +209,9 @@ describen a continuación.
 Para la implementación del HMI se utilizó el módulo display SSD1306 [2] con pantalla OLED de 0.96’ que se muestra en la figura 2.2.
 El comando gráfico del OLED se realiza a través de una comunicación I2C.
 
-<picture>
+<p align="center">
     <img alt="" src="img/ssd1306.PNG" width="300">
-</picture>
+</p>
 
 <p align="center"><em>Figura 2.1: Modulo display OLED SSD1306</em></p>
 
@@ -226,9 +223,9 @@ se utiliza el módulo Wi-Fi ESP12F incluido en la placa NODEMCU ESP8266 [2] de l
 Este módulo se comunica con el microcontrolador a través de una interfaz UART y la configuración del mismo
 se realiza a través de comandos AT.
 
-<picture>
+<p align="center">
     <img alt="" src="img/nodemcu.jpg" width="300">
-</picture>
+</p>
 
 
 <p align="center"><em>Figura 2.2: Modulo Wi-Fi NodeMCU ESP8266</em></p>
@@ -254,9 +251,9 @@ el ritmo cardíaco.
 
 En la Figura 3.1 se muestra un diagrama del hardware del sistema desarrollado.
 
-<picture>
+<p align="center">
     <img alt="" src="img/dbloquesf.png">
-</picture>
+</p>
 <p align="center"><em>Figura 3.1: Diagrama en bloque del sistema</em></p>
 
 
@@ -450,9 +447,9 @@ A partir de la tabla 3.7 a tabla 3.12 se presentan las funciones publicas de cad
 #### 3.2.6. Arquitectura
 En la figura 3.3 se muestra el diagrama de flujo del firmware.
 
-<picture>
+<p align="center">
     <img alt="" src="img/dflujo_f.png">
-</picture> 
+</p> 
 
 <p align="center"><em>Figura 3.3: Diagrama de flujo principal del firmware</em></p>
 
@@ -672,7 +669,7 @@ a la comparación al sistema de monitoreo realizado.
 </tbody>
 </table>
 
-**Tabla 4.3: Elementos del sumario del sistema automático para el sistema de monitoreo de frecuencia cardiaca.**
+<p align="center"><em>Tabla 4.3: Elementos del sumario del sistema automático para el sistema de monitoreo de frecuencia cardiaca</em></p>
 
 ## Capı́tulo 5 Conclusiones
 
