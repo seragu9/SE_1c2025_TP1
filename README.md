@@ -637,7 +637,7 @@ a la comparación al sistema de monitoreo realizado.
   </tr>
   <tr>
     <td>Casos de uso del proyecto</td>
-    <td>Tablas 2.2 a 2.3</td>
+    <td>Tablas 2.2 a 2.4</td>
   </tr>
   <tr>
     <td>Diagrama en bloques del sistema</td>
