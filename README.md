@@ -236,9 +236,9 @@ utilizando un LED infrarrojo y un fotodiodo. Detecta los cambios en la intensida
 el flujo sanguíneo en el dedo del usuario, generando señales analógicas que pueden procesarse para calcular 
 el ritmo cardíaco.
 
-<picture>
+<p align="center">
     <img alt="" src="img/hw827.png">
-</picture>
+</p>
 
 <p align="center"><em>Figura 2.3:Sensor de pulso cardiaco</em></p>
 
@@ -620,6 +620,7 @@ a la comparación al sistema de monitoreo realizado.
 
 ### 4.2. Documentación del desarrollo realizado
 
+<p align="center">
 <table><thead>
   <tr>
     <th>Elemento</th>
@@ -668,7 +669,7 @@ a la comparación al sistema de monitoreo realizado.
   </tr>
 </tbody>
 </table>
-
+</p>
 <p align="center"><em>Tabla 4.3: Elementos del sumario del sistema automático para el sistema de monitoreo de frecuencia cardiaca</em></p>
 
 ## Capı́tulo 5 Conclusiones
