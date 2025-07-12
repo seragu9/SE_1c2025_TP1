@@ -15,7 +15,8 @@
 void ssd1306_init();
 void ssd1306_clear_display();
 void ssd1306_print(uint8_t x, uint8_t y, const char* text);
-
+void ssd1306_clear_display_middle();
+void ssd1306_clear_top_rows();
 //=====[#include guards - end]=================================================
 
 #endif // _DISPLAY_H_

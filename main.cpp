@@ -1,5 +1,5 @@
-/*! @mainpage TP 3
- * @date Viernes, Junio 30, 2025
+/*! @mainpage TP 4
+ * @date Viernes, Julio 11, 2025
  * @author Sergio Aguirre
  * @section Sistema de monitoreo de frecuencia cardiaca
  *

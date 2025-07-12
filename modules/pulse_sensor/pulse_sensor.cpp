@@ -20,13 +20,9 @@
 //=====[Declaration of external public global variables]=======================
 
 
-float second = 0, third = 0;
-static uint32_t pulse_counter = 0, last_beat_count = 0; // Contador de ciclos2
-volatile float bpm;
-
+float bpm;
 AnalogIn hw827(A0);
 
-static void reset_counter();
 
 /**
  * @brief Calcula los latidos por minuto (BPM) a partir de la señal analógica.
@@ -34,46 +30,65 @@ static void reset_counter();
  * @return Frecuencia cardíaca en BPM.
  */
 void readBPM() {
-    static float prev_value = 0.0;
+
+    float reader = hw827.read();
+    // Filtro y estado
+    static float señalFiltrada = 0.0f;
+    static float promedio = 0.5f;
+    static float deltaAnterior = 0.0f;
+
+    // Tiempo
+    static uint32_t tiempo = 0;
+    static uint32_t ultimoLatido = 0;
+    const uint32_t pasoMuestreo = 50;            // milisegundos por llamada
+    const uint32_t tiempoInactividad = 3000;     // ms sin latido → BPM = 0
+    tiempo += pasoMuestreo;
+
+    // Intervalos y BPM
+    static uint16_t intervalos[4] = {1000, 1000, 1000, 1000};
+    static int idx = 0;
+    //static float bpmSuavizado = 0.0f;
+
+    // Parámetros
+    const float alpha = 0.9f;
+    const float beta  = 0.99f;
+    const float umbralDelta = 0.01f;
+    // Filtrado
+    señalFiltrada = alpha * señalFiltrada + (1 - alpha) * reader;
+    promedio = beta * promedio + (1 - beta) * señalFiltrada;
+    float delta = señalFiltrada - promedio;
+
     
-    float reader = hw827.read() * 3.3;  // Convertir a tension (0 - 3.3V)
+    static bool creciendo = false;
+    static uint32_t intervalo = 0;
+    if (delta > deltaAnterior) {
+        creciendo = true;
+    } else if (delta < deltaAnterior && creciendo && deltaAnterior > umbralDelta) {
+        // Pico detectado
+        creciendo = false;
+        intervalo = tiempo - ultimoLatido;
 
-    // Umbral de detección de pulso
-    float threshold = 1.65 + 0.012; // continua + variación de 12mV
-
-    // Detectar el ascenso del pulso
-    if (prev_value < threshold && reader >= threshold) {
-        int count_diff = pulse_counter - last_beat_count;
-        
-        if (count_diff > 45) { // Filtrar latidos muy rápidos (450ms con 10ms por ciclo)
-            bpm = (6000.0 / (count_diff*0.6 + second*0.4)); // 6000 ciclos de 10ms
-            
-            reset_counter(); // resetea contador si es necesario
-            last_beat_count = pulse_counter;  // Guardar el ciclo en el que ocurrió el pulso
-            second = count_diff;
+		// filtrar picos rapidos con ruido
+        if (intervalo >= 300 && intervalo <= 2000) {
+            intervalos[idx] = intervalo;
+            idx = (idx + 1) % 4;
+            // Promedio de los últimos intervalos
+            uint32_t suma = 0;
+            for (int i = 0; i < 4; i++) suma += intervalos[i];
+            uint32_t promIntervalo = suma / 4;
+            int bpm_actual = 60000 / promIntervalo;// calculo BPM
+            if(bpm) bpm = bpm_actual;
+            bpm = 0.8f * bpm + 0.2f * bpm_actual;
         }
+
+        ultimoLatido = tiempo;
     }
-    
-    prev_value = reader;  // Actualizar valor anterior
-    pulse_counter++;  // Incrementar contador en cada llamada
+
+    deltaAnterior = delta;
 }
-
-
 
 
 float getBPM() {
     return bpm;
     }
 
-
-/**
- * @brief Resetea el contador de ciclos si excede el límite definido.
- */
-
-void reset_counter() {
-    if (pulse_counter > 1e6) {
-        pulse_counter = pulse_counter - last_beat_count;
-    }
-    
-    
-}
