@@ -37,7 +37,7 @@ Incorpora una visualizacion basada en un display. La conectividad Wi-Fi facilita
 ### 1.1. Objetivo
   Desarrollar un sistema embebido portátil para el monitoreo de la frecuencia cardíaca en el hogar, que permita al usuario controlar su pulso en tiempo real y almacenar registros históricos accesibles de forma remota por profesionales de la salud.
 
-### 1.2. Intro
+### 1.2. Introducción
 El monitoreo de la frecuencia cardíaca es una herramienta fundamental para el cuidado de la salud, ya que permite detectar a tiempo alteraciones en el ritmo del corazón que podrían ser indicio de enfermedades cardiovasculares. Si bien existen dispositivos comerciales para esta tarea, muchos de ellos presentan limitaciones en cuanto a accesibilidad, personalización o posibilidad de seguimiento remoto por parte de profesionales médicos.
 
 El presente proyecto aborda esta problemática mediante el desarrollo de un sistema embebido que permite a cualquier persona controlar su pulso desde su hogar de forma sencilla, confiable y económica. El sistema utiliza sensores ópticos (fotodetectores) para medir el ritmo cardíaco en tiempo real y cuenta con una pantalla para visualizar la información y configurar umbrales de alerta según las necesidades del usuario. Además, se integra con una red Wi-Fi, lo que posibilita el envío de los datos registrados a plataformas externas, donde pueden ser consultados por médicos u otros profesionales de la salud para realizar un seguimiento histórico del paciente.
