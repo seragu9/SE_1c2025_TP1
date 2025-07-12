@@ -31,7 +31,7 @@ Incorpora una visualizacion basada en un display. La conectividad Wi-Fi facilita
 
 | **Revisión** | **Cambios realizados** |  **Fecha** |
 |:------------:|:----------------------:|:----------:|
-|       1      | Creación del documento | 12/06/2025 |
+|       1      | Creación del documento | 11/07/2025 |
 |       2      |                        |            |
 |       3      |                        |            |
 
@@ -209,14 +209,16 @@ describen a continuación.
 
 
 #### 2.3.2. Módulo del display grafico
-Para la implementación del HMI se utilizó el módulo display SSD1306 [4] con pantalla OLED de 0.96’ que se muestra en la figura 2.2.
+Para la implementación del HMI se utilizó el módulo display SSD1306 [2] con pantalla OLED de 0.96’ que se muestra en la figura 2.2.
 El comando gráfico del OLED se realiza a través de una comunicación I2C.
 
 <picture>
     <img alt="" src="img/ssd1306.PNG" width="300">
 </picture>
 
-**Figura 2.1: Modulo display.**
+<p align="center"><em>Figura 2.1: Modulo display OLED SSD1306</em></p>
+
+Para poder dibujar los caracteres en este display, se hizo uso de la definicion de variables proporcionada por la biblioteca Lexus2k [4].
 
 #### 2.3.3. Módulo Wi-Fi
 Para la implementación de la comunicación con la computadora de supervisión a través de un navegador web
@@ -228,12 +230,11 @@ se realiza a través de comandos AT.
     <img alt="" src="img/nodemcu.jpg" width="300">
 </picture>
 
-Para poder dibujar los caracteres en este display, se hizo uso de la definicion de variables proporcionada por la biblioteca Lexus2k [6].
 
-**Figura 2.2: NODEMCU8266.**
+<p align="center"><em>Figura 2.2: Modulo Wi-Fi NodeMCU ESP8266</em></p>
 
 #### 2.3.4.  Sensor de pulso cardiaco.
-El modulo HW-827 mostrado en la figura 2.3 es un sensor óptico que permite medir la frecuencia cardíaca 
+El modulo HW-827 [1] mostrado en la figura 2.3 es un sensor óptico que permite medir la frecuencia cardíaca 
 utilizando un LED infrarrojo y un fotodiodo. Detecta los cambios en la intensidad de la luz reflejada por 
 el flujo sanguíneo en el dedo del usuario, generando señales analógicas que pueden procesarse para calcular 
 el ritmo cardíaco.
@@ -242,7 +243,7 @@ el ritmo cardíaco.
     <img alt="" src="img/hw827.png">
 </picture>
 
-**Figura 2.3: Sensor de pulso cardiaco.**
+<p align="center"><em>Figura 2.3:Sensor de pulso cardiaco</em></p>
 
 
 ## Capítulo 3. Diseño e implementación
@@ -256,8 +257,8 @@ En la Figura 3.1 se muestra un diagrama del hardware del sistema desarrollado.
 <picture>
     <img alt="" src="img/dbloquesf.png">
 </picture>
+<p align="center"><em>Figura 3.1: Diagrama en bloque del sistema</em></p>
 
-**Figura 3.1: Diagrama en bloque del sistema.**
 
 #### 3.1.2. Lista de señales
 En la tabla 3.1 se listan las señales del sistema, indicando la conexión de los puertos de la placa NUCLEO-
@@ -332,8 +333,7 @@ F429ZI a los módulos de hardware.
 </tbody>
 </table>
 <p>&nbsp;</p>
-
-**Tabla 3.1: Lista de señales del sistema.**
+<p align="center"><em>Tabla 3.1: Lista de señales del sistema</em></p>
 
 ### 3.2. Firmware
 
@@ -354,11 +354,12 @@ El sistema se encuentra implementado en C++ utilizando Mbed. El firmware present
 | `SE_1c2025_TP1/modules/heart_monitor_system/` | Lógica principal y configuración del sistema     |
 | `SE_1c2025_TP1/modules/pulse_sensor/`    | Funciones de control de sensor de pulso cardiaco         |
 | `SE_1c2025_TP1/modules/serial_com/`    | Funciones de escritura por puerto serie                 |
-| `SE_1c2025_TP1/files/`    | Archivos utilizados (mensaje de audio)          |
+| `SE_1c2025_TP1/modules/wifi_com/`    | Funciones de control de modulo Wi-Fi por puerto serie                 |
+| `SE_1c2025_TP1/modules/data_history/`    | Funciones para guardar registros historicos       |
 | `SE_1c2025_TP1/main.cpp`    | Archivo principal de ejecución          |
 | `SE_1c2025_TP1/mbed_app.json`    | Archivo de configuracion para el compilador     |
 
-**Tabla 3.2: Estructura de directorios y modulos.**
+<p align="center"><em>Tabla 3.2: Estructura de directorios y modulos</em></p>
 
 
 | Nombre de elemento        | Tipo                          |      Descripción   |
@@ -368,14 +369,14 @@ El sistema se encuentra implementado en C++ utilizando Mbed. El firmware present
 | bpm_actual         | Variable float      | Se usa guardar el valor calculado actual de bpm.      |
 | intervals         | Variable uint32      | Guarda los ultimos cuatro valores de intervalos entre pulsos.     |
 
-**Tabla 3.3: Objetos y Variables del modulo pulse_sensor.**
+<p align="center"><em>Tabla 3.3: Objetos y Variables del modulo pulse_sensor</em></p>
 
 
 | Nombre de elemento        | Tipo                          |      Descripción   |
 |-------------------|-----------------------|---------------------------------------|
 | i2c         | Objeto I2C      | Se usa para la comunicacion I2C donde se conecta el SSD1306.      |
 
-**Tabla 3.4: Objetos y Variables del modulo display.**
+<p align="center"><em>Tabla 3.4: Objetos y Variables del modulo display</em></p>
 
 
 | Nombre de elemento        | Tipo                          |      Descripción   |
@@ -383,14 +384,15 @@ El sistema se encuentra implementado en C++ utilizando Mbed. El firmware present
 | wifiComState_t         | Typedef      | Se usa para informar el estado de la maquina de estados de comunicacion Wi-Fi.      |
 | uartWifi         | Objeto UnbufferedSerial      | Se usa para la comunicacion serie del modulo NODEMCU8266      |
 
-**Tabla 3.5: Objetos y Variables del modulo wifi_com.**
+<p align="center"><em>Tabla 3.5: Objetos y Variables del modulo wifi_com</em></p>
+
 
 | Nombre de elemento        | Tipo                          |      Descripción   |
 |-------------------|-----------------------|---------------------------------------|
 | buttonState_t         | Typedef      | Se usa para informar el estado de la maquina de estados de pulsado de boton.      |
 | button         | Objeto DigitalIn      | Se usa para detectar estado del boton de usuario BUTTON1     |
 
-**Tabla 3.6: Objetos y Variables del modulo button.**
+<p align="center"><em>Tabla 3.6: Objetos y Variables del modulo button</em></p>
 
 
 A partir de la tabla 3.7 a tabla 3.12 se presentan las funciones publicas de cada modulo.
@@ -400,8 +402,7 @@ A partir de la tabla 3.7 a tabla 3.12 se presentan las funciones publicas de cad
 | heartMonitorSystemInit()         | Inicializa todos los modulos y configuración inicial del sistema.      | main.cpp   |
 | heartMonitorSystemUpdate()        | Se encarga la logica del programando llamando a funciones de actualización.      | main.cpp   |
 
-**Tabla 3.7: Funciones publicas del modulo heart_monitor_system.**
-
+<p align="center"><em>Tabla 3.7: Funciones publicas del modulo heart_monitor_system</em></p>
 
 
 | Nombre de la función        | Descripción                          |      Archivo que lo usa   |
@@ -409,7 +410,7 @@ A partir de la tabla 3.7 a tabla 3.12 se presentan las funciones publicas de cad
 | readBPM()         | Calcula un valor de lectura de pulso cardiaco      | heart_monitor_system.cpp   |
 | getBPM()        | Entrega el valor obtenido del ultimo calculo de pulso cardiaco      | heart_monitor_system.cpp y wifi_com.cpp   |
 
-**Tabla 3.8: Funciones publicas del modulo pulse_sensor.**
+<p align="center"><em>Tabla 3.8: Funciones publicas del modulo pulse_sensor</em></p>
 
 
 | Nombre de la función        | Descripción                          |      Archivo que lo usa   |
@@ -420,28 +421,31 @@ A partir de la tabla 3.7 a tabla 3.12 se presentan las funciones publicas de cad
 | ssd1306_clear_display_middle()       | Borra parte media o central del display (lectura de BPM)     | heart_monitor_system.cpp   |
 | ssd1306_clear_top_rows()        | Borra parte superior del display (alertas)      | heart_monitor_system.cpp  |
 
-**Tabla 3.9: Funciones publicas del modulo display.**
+<p align="center"><em>Tabla 3.9: Funciones publicas del modulo display</em></p>
+
+
 
 | Nombre de la función        | Descripción                          |      Archivo que lo usa   |
 |-------------------|-----------------------|---------------------------------------|
 | debounceButtonInit()         | Inicia el  estado inicial del boton de usuario      | heart_monitor_system.cpp   |
 | debounceButtonUpdate()        | Actualiza estado de boton mediante una maquina de estados      | heart_monitor_system.cpp   |
 
-**Tabla 3.10: Funciones publicas del modulo button.**
+<p align="center"><em>Tabla 3.10: Funciones publicas del modulo button</em></p>
+
 
 | Nombre de la función        | Descripción                          |      Archivo que lo usa   |
 |-------------------|-----------------------|---------------------------------------|
 | addRegisterData()         | Agrega una lectura al registro de lecturas con fecha y hora     | heart_monitor_system.cpp   |
 
-**Tabla 3.11: Funciones publicas del modulo data_history.**
+<p align="center"><em>Tabla 3.11: Funciones publicas del modulo data_history</em></p>
+
 
 | Nombre de la función        | Descripción                          |      Archivo que lo usa   |
 |-------------------|-----------------------|---------------------------------------|
 | wifiComInit()         | Inicia el modulo Wi-Fi mediante comandos AT      | heart_monitor_system.cpp   |
 | wifiComUpdate()      | Actualiza la conexion Wi-Fi mediante una maquina de estados      | heart_monitor_system.cpp   |
 
-**Tabla 3.12: Funciones publicas del modulo button.**
-
+<p align="center"><em>Tabla 3.12: Objetos y Variables del modulo wifi_com</em></p>
 
 #### 3.2.6. Arquitectura
 En la figura 3.3 se muestra el diagrama de flujo del firmware.
@@ -450,8 +454,7 @@ En la figura 3.3 se muestra el diagrama de flujo del firmware.
     <img alt="" src="img/dflujo_f.png">
 </picture> 
 
-**Figura 3.3: Diagrama de flujo principal del firmware.**
-
+<p align="center"><em>Figura 3.3: Diagrama de flujo principal del firmware</em></p>
 
 ## Capítulo 4. Ensayos y resultados
 
