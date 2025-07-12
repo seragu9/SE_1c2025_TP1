@@ -19,8 +19,8 @@ Incorpora una visualizacion basada en un display. La conectividad Wi-Fi facilita
 ## Tabla de Contenidos
 
 - [1. Introducción](#1-introducción-general)
-- [2. Objetivos](#2-objetivos)
-- [3. Metodología](#3-metodología)
+- [2. Introducción Específica](#capítulo-2-Introducción-específica)
+- [3. Diseño e Implementación](#capítulo-3-Diseño-e-implementación)
 - [4. Descripción del Sistema](#4-descripción-del-sistema)
 - [5. Resultados](#5-resultados)
 - [6. Conclusiones](#6-conclusiones)
